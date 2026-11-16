@@ -1,0 +1,7 @@
+SimpleEnglish/
+asd-ste100-skill/
+prosta-polszczyzna/
+__pycache__/
+*.pyc
+.pytest_cache/
+.superpowers/
