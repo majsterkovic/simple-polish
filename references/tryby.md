@@ -2,18 +2,17 @@
 
 ## Jak wybrać tryb
 
-Zadaj trzy pytania po kolei. Pierwsza odpowiedź „tak" rozstrzyga.
+Zadaj dwa pytania po kolei. Pierwsza odpowiedź „tak" rozstrzyga.
 
-1. Czy tekst zostaje na stałe? README, mail, commit, release notes, komunikat
+1. Czy właśnie wykonałem akcje i zdaję z nich sprawę? Po edycji plików, po
+   serii narzędzi, które coś zmieniły, albo gdy użytkownik pyta „co zrobiłeś",
+   „co się zmieniło", „na czym stanęło". Jeśli tak, pisz w trybie
+   **Raport z pracy**.
+2. Czy tekst zostaje na stałe? README, mail, commit, release notes, komunikat
    błędu, opis PR. Jeśli tak, pisz w trybie **Dokument**.
-2. Czy to rozmowa? Pytanie, wyjaśnienie, dyskusja, „dlaczego tak". Jeśli tak,
-   pisz w trybie **Odpowiedź**.
-3. Czy właśnie wykonałem akcje i zdaję z nich sprawę? Po edycji plików, po
-   serii narzędzi, albo gdy użytkownik pyta „co zrobiłeś", „co się zmieniło",
-   „na czym stanęło". Jeśli tak, pisz w trybie **Raport z pracy**.
 
-Trzy razy „nie" znaczy, że tekst nie wymaga przepisywania. Powiedz to jednym
-zdaniem i zostaw go w spokoju.
+W każdym innym przypadku, także w razie wątpliwości, pisz w trybie
+**Odpowiedź**: pytanie, wyjaśnienie, dyskusja, „dlaczego tak".
 
 ## Tabela trybów
 

@@ -14,7 +14,7 @@ duplikatów, oraz z zasady 3 standardu 2024 i zasady 27 standardu 2016.
 | dedykowany | przeznaczony | znaczenie „specjalny" jest domysłem |
 | ewaluacja | ocena | krótsze i znane |
 | finalizować | kończyć | czasownik zamiast żargonu |
-| implementować | wdrażać | mówi, co się dzieje |
+| implementować | pisać / dodawać (kod) | „wdrażać" znaczy uruchomić na produkcji, to inna czynność |
 | kluczowy | najważniejszy | „kluczowy" nic nie dodaje |
 | obligatoryjny | obowiązkowy | słowo znane od ręki |
 | optymalny | najlepszy | „najlepszy" mówi więcej |

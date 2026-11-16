@@ -9,7 +9,7 @@ i przypadki, w których skill nie powinien niczego ruszać.
 administratora, który może go potem przejrzeć.
 
 Dobrze: Moduł eksportu zapisuje dane do CSV. Potem wysyła raport mailem do
-administratora.
+administratora. Administrator może go później przejrzeć.
 
 Dwie czynności w jednym zdaniu każą czytelnikowi trzymać w głowie dwie rzeczy
 naraz.
@@ -41,10 +41,10 @@ Każde „nie" czytelnik musi odwrócić w głowie, więc dwa dają podwójną p
 Źle: Zostało ustalone, że wdrożenie odbędzie się w piątek. Zaleca się
 wcześniejsze sprawdzenie kopii zapasowej.
 
-Dobrze: Ustaliliśmy, że wdrożymy zmianę w piątek. Przed wdrożeniem sprawdź
-kopię zapasową.
+Dobrze: Wdrożenie jest w piątek. Przed wdrożeniem sprawdź kopię zapasową.
 
-Forma osobowa mówi, kto działa, a tryb rozkazujący mówi, kto ma działać.
+Tryb rozkazujący mówi, kto ma działać. Formy „my" używasz tylko wtedy, gdy
+wykonawca jest znany z kontekstu. Nie wymyślasz go.
 
 ## Reguła: `lancuch-dopelniaczowy`
 
@@ -94,13 +94,15 @@ Uproszczenie nie może zaokrąglić liczby ani przerobić cytowanego błędu.
 
 ## Reguła: `ostrzezenie-zawsze`
 
+Źródło: Polecenie nieodwracalnie usuwa z katalogu roboczego pliki, których
+git nie śledzi.
+
 Źle: Polecenie czyści katalog roboczy.
 
-Dobrze: Polecenie trwale usuwa wszystkie niezapisane pliki z katalogu
-roboczego. Nie da się tego cofnąć.
+Dobrze: Polecenie usuwa pliki, których git nie śledzi. Nie da się tego cofnąć.
 
-Ostrzeżenie o akcji nieodwracalnej zostaje, nawet gdy tekst robi się przez nie
-dłuższy.
+Wersja zła skróciła tekst i zgubiła ostrzeżenie. Ostrzeżenie o akcji
+nieodwracalnej zostaje, nawet gdy tekst robi się przez nie dłuższy.
 
 ## Tryb dokument
 
@@ -111,8 +113,8 @@ README, przed:
 
 README, po:
 
-> Narzędzie przerabia stare pliki ustawień na nowy format. Dzięki temu działają
-> z wersją 2.0.
+> Narzędzie przerabia stare pliki konfiguracyjne na nowy format. Dzięki temu
+> są zgodne z nową wersją.
 
 Komunikat błędu, przed:
 
@@ -121,7 +123,7 @@ Komunikat błędu, przed:
 Komunikat błędu, po:
 
 > Nie udało się połączyć z bazą danych. Sprawdź, czy serwer bazy działa i czy
-> adres w pliku `.env` jest poprawny.
+> adres w ustawieniach połączenia jest poprawny.
 
 Dobry komunikat mówi, co się stało i co czytelnik może zrobić.
 
@@ -197,10 +199,11 @@ Zastrzeżenie prawne albo warunek bezpieczeństwa. Nie skracasz jego treści:
 > Przed: Administrator danych osobowych może przekazać dane podmiotom trzecim
 > wyłącznie na podstawie umowy powierzenia, z zastrzeżeniem art. 28 RODO.
 >
-> Po: Administrator może przekazać dane osobowe innej firmie tylko na podstawie
-> umowy powierzenia. Obowiązuje przy tym art. 28 RODO.
+> Po: Administrator danych osobowych może przekazać dane podmiotom trzecim
+> tylko na podstawie umowy powierzenia, z zastrzeżeniem art. 28 RODO.
 
-Zastrzeżenie i numer artykułu zostają. Upraszczasz tylko składnię.
+Zastrzeżenie, termin „podmioty trzecie" i numer artykułu zostają. Upraszczasz tylko
+składnię: „wyłącznie" zamienia się na „tylko", nic więcej.
 
 Pytanie, na które wystarczy jedno zdanie: „Czy testy przechodzą?"
 

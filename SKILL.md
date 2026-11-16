@@ -1,6 +1,6 @@
 ---
 name: simple-polish
-description: Pisze po polsku prosto i konkretnie. Uzywaj przy kazdym tekscie po polsku: dokumentacji, mailach, commitach, komunikatach bledow, a przede wszystkim gdy opisujesz wykonana prace. Triggery: prosty jezyk, jasnopis, nie rozumiem, opisz mi to, co zrobiles.
+description: "Pisze po polsku prosto i konkretnie. Uzywaj przy kazdym tekscie po polsku: dokumentacji, mailach, commitach, komunikatach bledow, a przede wszystkim gdy opisujesz wykonana prace. Triggery: prosty jezyk, jasnopis, nie rozumiem, opisz mi to, co zrobiles."
 ---
 
 # Simple Polish
@@ -27,10 +27,29 @@ Trzy reguły trzymają całość:
 
 ## Raport z pracy
 
-Układ: skutek → co się zmieniło → co to znaczy dla projektu → decyzja → pewność.
+Układ: skutek → co się zmieniło → co to znaczy dla projektu → decyzja
+(„Co masz zrobić") → pewność.
 
 Pierwsze zdanie mówi, co się zmieniło z punktu widzenia projektu. Nie mówi,
-które pliki ruszyłeś.
+które pliki ani funkcje ruszyłeś.
+
+Etykiety części piszesz zwykłym tekstem z dwukropkiem: Co się zmieniło:,
+Co to znaczy dla projektu:, Co masz zrobić:, Pewność:. Raport jest prozą,
+bez bolda i bez nagłówków.
+
+W „Co się zmieniło" opisujesz zmianę zachowania, nie listę plików. Pliki
+i funkcje podajesz tylko wtedy, gdy czytelnik musi coś z nimi zrobić.
+
+> Logowanie działa teraz stabilniej i łatwiej je później zmieniać.
+>
+> Co się zmieniło: sprawdzanie tokenów jest w jednym miejscu, a nie rozproszone
+> po kilku plikach.
+>
+> Co to znaczy dla projektu: stara ścieżka logowania przestanie działać.
+>
+> Co masz zrobić: nic. Jeśli chcesz, mogę usunąć starą ścieżkę.
+>
+> Pewność: testy przechodzą, ale nie sprawdzałem tego na prawdziwym ruchu.
 
 Część „pewność" rozdziela sprawdzone od założonego. Sprawdzone to uruchomiony
 test, przeczytany plik, wykonane polecenie. Założone to reszta. Nie piszesz
