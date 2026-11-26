@@ -6,14 +6,23 @@ czytania kodu.
 
 ## Instalacja
 
-Jako skill globalny:
+Przez [skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
-npx skills add <repo> --skill simple-polish
+npx skills add majsterkovic/simple-polish
 ```
 
-Jako skill projektu: skopiuj `SKILL.md` i katalog `references/` do
-`.claude/skills/simple-polish/` w swoim repozytorium.
+Ręcznie w Claude Code, dla wszystkich projektów:
+
+```bash
+git clone https://github.com/majsterkovic/simple-polish ~/.claude/skills/simple-polish
+```
+
+Dla jednego projektu sklonuj repo do `.claude/skills/simple-polish/` w jego
+katalogu. Agent potrzebuje tylko `SKILL.md` i katalogu `references/`.
+
+Skill włącza się sam, gdy agent pisze po polsku. Możesz go też przywołać
+wprost, na przykład: „opisz mi prostym językiem, co zrobiłeś".
 
 ## Trzy tryby
 
@@ -51,7 +60,8 @@ Więcej przykładów: `references/przyklady.md`.
 - Nie zamienia niepewności w pewność i nie usuwa zastrzeżeń typu „chyba",
   „prawdopodobnie".
 - Nie przepisuje tekstu, który już jest prosty. Mówi to jednym zdaniem.
-- Nie komentuje przepisania, chyba że tryb tego wymaga.
+- Nie dopisuje komentarza o tym, co uprościł. Oddaje sam tekst.
+- Nie rusza kodu, komend ani logów. Reguły dotyczą prozy.
 - Nie daje certyfikatu zgodności z normą ISO 24495-1. Korzysta z tych samych
   zasad, ale nikt go pod tym kątem nie badał.
 
@@ -61,9 +71,9 @@ Więcej przykładów: `references/przyklady.md`.
   opublikowane przez Jasnopis, Fundację Języka Polskiego, Uniwersytet
   Szczeciński, Uniwersytet im. Adama Mickiewicza w Poznaniu i Uniwersytet
   Warszawski. Podstawa trybu Dokument.
-- Standard prostej polszczyzny Pracowni Prostej Polszczyzny Uniwersytetu
-  Wrocławskiego (2016), https://prostapolszczyzna.uwr.edu.pl/. Uzupełnienie
-  zasad 2024.
+- [Standard prostej polszczyzny](https://prostapolszczyzna.uwr.edu.pl/)
+  Pracowni Prostej Polszczyzny Uniwersytetu Wrocławskiego (2016).
+  Uzupełnienie zasad 2024.
 - [prosta-polszczyzna](https://github.com/kashiash/prosta-polszczyzna),
   autor: kashiash (MIT). Źródło par w `references/zamienniki.md` oraz zasad
   BLUF, Top-Down Bridge i Just-in-Time Context w raporcie z pracy.
@@ -77,13 +87,24 @@ Więcej przykładów: `references/przyklady.md`.
 Część „Pewność" w raporcie z pracy jest własna. Żaden z tych projektów nie
 każe agentowi mówić, czego nie sprawdził.
 
+## Stan projektu
+
+Gotowa jest faza 1: sam skill, czyli instrukcje i referencje. Agent stosuje
+reguły, ale nic ich nie sprawdza automatycznie.
+
+W planach:
+
+- faza 2: linter, który znajduje naruszenia reguł twardych w pliku,
+- faza 3: hooki w Claude Code i ewaluacja na dwunastu scenariuszach.
+
 ## Testy
 
 ```bash
 python3 tests/run.py
 ```
 
-Testy sprawdzają strukturę skilla. Nie wymagają żadnych bibliotek.
+Testy sprawdzają strukturę skilla i pilnują poprawionych wcześniej błędów.
+Wymagają tylko Pythona 3, bez dodatkowych bibliotek.
 
 ## Licencja
 
