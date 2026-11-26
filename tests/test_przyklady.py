@@ -2,9 +2,21 @@ import sys
 
 from rules import ROOT, RULES
 
-CASES = ["konfiguracja", "createUser", "nieodwracaln", "zastrzeżenie", "jedno zdanie"]
+CASES = {
+    "## Czego nie ruszać": ["konfiguracja", "createUser", "nieodwracaln",
+                            "zastrzeżenie"],
+    "## Tekst już dobry": ["jedno zdanie"],
+}
 SECTIONS = ["## Tryb dokument", "## Tryb odpowiedź", "## Tryb raport",
             "## Czego nie ruszać", "## Tekst już dobry"]
+
+
+def section(text: str, header: str) -> str:
+    start = text.find(header)
+    if start < 0:
+        return ""
+    end = text.find("\n## ", start + len(header))
+    return text[start:] if end < 0 else text[start:end]
 
 
 def main() -> int:
@@ -13,10 +25,20 @@ def main() -> int:
         print("FAIL: brak references/przyklady.md")
         return 1
     text = path.read_text(encoding="utf-8")
+    errors = []
 
-    errors = [f"brak reguly: {rule}" for rule in RULES if f"## Reguła: `{rule}`" not in text]
-    errors += [f"brak przypadku: {case}" for case in CASES if case not in text]
-    errors += [f"brak sekcji: {s}" for s in SECTIONS if s not in text]
+    for rule in RULES:
+        if not section(text, f"## Reguła: `{rule}`").strip():
+            errors.append(f"brak reguly: {rule}")
+
+    for header in SECTIONS:
+        body = section(text, header)
+        if not body:
+            errors.append(f"brak sekcji: {header}")
+            continue
+        for case in CASES.get(header, []):
+            if case not in body:
+                errors.append(f"brak przypadku: {case} w sekcji {header}")
 
     for error in errors:
         print("FAIL:", error)

@@ -58,7 +58,9 @@ Więcej przykładów: `references/przyklady.md`.
 ## Skąd pochodzą reguły
 
 - [Ustandaryzowane zasady prostego języka (2024)](https://jasnopis.pl),
-  opublikowane przez zespół Jasnopis. Podstawa trybu Dokument.
+  opublikowane przez Jasnopis, Fundację Języka Polskiego, Uniwersytet
+  Szczeciński, Uniwersytet im. Adama Mickiewicza w Poznaniu i Uniwersytet
+  Warszawski. Podstawa trybu Dokument.
 - Standard prostej polszczyzny Pracowni Prostej Polszczyzny Uniwersytetu
   Wrocławskiego (2016), https://prostapolszczyzna.uwr.edu.pl/. Uzupełnienie
   zasad 2024.
@@ -66,11 +68,11 @@ Więcej przykładów: `references/przyklady.md`.
   autor: kashiash (MIT). Źródło par w `references/zamienniki.md` oraz zasad
   BLUF, Top-Down Bridge i Just-in-Time Context w raporcie z pracy.
 - [SimpleEnglish](https://github.com/AminBlg/SimpleEnglish), autor: AminBlg
-  (MIT). Podział na rejestry, samokontrola, dyscyplina wyjścia, proza bez
-  bolda w odpowiedziach.
+  (MIT). Podział na rejestry, dyscyplina wyjścia, proza bez bolda
+  w odpowiedziach.
 - [asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill), autor:
-  danyuchn (MIT). Dwa poziomy reguł, twarde i doradcze, oraz zasada „forma,
-  nie treść".
+  danyuchn (MIT). Rozdzielenie trybu strict i flavored, dwa poziomy reguł,
+  twarde i doradcze, oraz zasada „forma, nie treść".
 
 Część „Pewność" w raporcie z pracy jest własna. Żaden z tych projektów nie
 każe agentowi mówić, czego nie sprawdził.

@@ -184,6 +184,18 @@ Identyfikator w zdaniu. Kod zostaje, upraszczasz tylko otoczenie:
 
 Nazwy `createUser` nie tłumaczysz ani nie odmieniasz.
 
+Blok kodu. Reguły dotyczą prozy, nie kodu:
+
+```python
+def load_config(path):
+    if not os.path.exists(path):
+        raise FileNotFoundError(path)
+    return json.loads(Path(path).read_text())
+```
+
+Nazwy, składnię i komentarze zostawiasz bez zmian. Upraszczasz tylko zdanie,
+które ten kod opisuje.
+
 Ostrzeżenie o akcji nieodwracalnej. Przetrwa każde skracanie:
 
 > Przed: Należy mieć na uwadze, iż wykonanie polecenia `DROP TABLE` skutkuje

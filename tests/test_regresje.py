@@ -80,8 +80,55 @@ def implementowac_not_deploy() -> list[str]:
     return []
 
 
+def opis_z_polskimi_znakami() -> list[str]:
+    text = read("SKILL.md")
+    block = text[4:text.find("\n---", 4)]
+    opis = next((line for line in block.splitlines()
+                 if line.startswith("description:")), "")
+    return [f"SKILL.md opis: brak polskich znaków w „{word}”"
+            for word in ("Używaj", "każdym", "błędów", "zrobiłeś")
+            if word not in opis]
+
+
+def styl_agenta_bez_sprzecznosci() -> list[str]:
+    text = section(read("references/styl-agenta.md"), "## Czego nie pisać")
+    errors = []
+    if "nigdy" in text:
+        errors.append("styl-agenta.md: „nigdy” przeczy dopuszczalnej liście plików")
+    if "To nie jest zakaz" in text:
+        errors.append("styl-agenta.md: „to nie jest zakaz” przeczy zdaniu o „nigdy”")
+    return errors
+
+
+def zrodla_w_readme() -> list[str]:
+    text = read("README.md")
+    errors = []
+    if "strict i flavored" not in text:
+        errors.append("README.md: brak „strict i flavored” przy danyuchn")
+    if "samokontrola" in text:
+        errors.append("README.md: „samokontrola” nie występuje w SKILL.md")
+    if "zespół Jasnopis" in text:
+        errors.append("README.md: zasady 2024 mają więcej autorów niż Jasnopis")
+    return errors
+
+
+def zamienniki_nie_za_ostre() -> list[str]:
+    rows = [line for line in read("references/zamienniki.md").splitlines()
+            if line.startswith("| ")]
+    errors = []
+    for word in ("ten sam", "ważnie", "wziąć udział", "wziąć się za coś"):
+        if any(line.startswith(f"| {word} |") for line in rows):
+            errors.append(f"zamienniki.md: „{word}” to nie para zamienna")
+    for line in rows:
+        if line.startswith("| w zakresie |") and "(usuń)" in line:
+            errors.append("zamienniki.md: „w zakresie” nie zawsze jest puste")
+    return errors
+
+
 CHECKS = [frontmatter_parses, report_format_in_skill, mode_order,
-          examples_keep_content, implementowac_not_deploy]
+          examples_keep_content, implementowac_not_deploy,
+          opis_z_polskimi_znakami, styl_agenta_bez_sprzecznosci,
+          zrodla_w_readme, zamienniki_nie_za_ostre]
 
 
 def main() -> int:

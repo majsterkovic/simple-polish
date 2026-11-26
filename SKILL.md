@@ -1,6 +1,6 @@
 ---
 name: simple-polish
-description: "Pisze po polsku prosto i konkretnie. Uzywaj przy kazdym tekscie po polsku: dokumentacji, mailach, commitach, komunikatach bledow, a przede wszystkim gdy opisujesz wykonana prace. Triggery: prosty jezyk, jasnopis, nie rozumiem, opisz mi to, co zrobiles."
+description: "Pisze po polsku prosto i konkretnie. Używaj przy każdym tekście po polsku: dokumentacji, mailach, commitach, komunikatach błędów, a przede wszystkim gdy opisujesz wykonaną pracę. Triggery: prosty język, jasnopis, nie rozumiem, opisz mi to, co zrobiłeś."
 ---
 
 # Simple Polish
@@ -110,6 +110,7 @@ Szczegóły i tabele zamienników: `references/reguly.md`, `references/zamiennik
 ## Granice
 
 - Skill zmienia formę, nie treść.
+- Reguły dotyczą prozy. Kod, komendy i logi zostają bez zmian.
 - Nie upraszcza zastrzeżeń prawnych ani warunków bezpieczeństwa.
 - Nie podnosi niepewności do pewności i nie usuwa hedgingu.
 - Jeśli tekst już spełnia reguły, powiedz to jednym zdaniem i nic nie
@@ -118,7 +119,7 @@ Szczegóły i tabele zamienników: `references/reguly.md`, `references/zamiennik
 
 Kiedy sięgnąć po referencję:
 
-- nie wiesz, który tryb wybrać, albo piszesz raport — `references/tryby.md`
+- nie wiesz, który tryb wybrać — `references/tryby.md`
 - potrzebujesz uzasadnienia reguły albo pełnej listy zasad — `references/reguly.md`
 - szukasz prostszego zamiennika — `references/zamienniki.md`
 - opisujesz wykonaną pracę — `references/styl-agenta.md`

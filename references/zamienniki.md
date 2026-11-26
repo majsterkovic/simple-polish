@@ -1,7 +1,8 @@
 # Zamienniki
 
-Tabela par: zamiast tego napisz to. Nie jest to zakaz. Wyraz z tabeli może
-zostać, jeśli jest terminem domenowym i czytelnik go zna.
+Tabela par: zamiast tego napisz to. Zamiennik stosujesz tylko wtedy, gdy
+znaczenie zostaje to samo. Wyraz z tabeli może zostać, jeśli jest terminem
+domenowym i czytelnik go zna.
 
 Pary bierzemy ze słownika `prosta-polszczyzna` (kashiash, MIT), po odsianiu
 duplikatów, oraz z zasady 3 standardu 2024 i zasady 27 standardu 2016.
@@ -12,7 +13,7 @@ duplikatów, oraz z zasady 3 standardu 2024 i zasady 27 standardu 2016.
 |---|---|---|
 | aktualnie | obecnie / teraz | mówi to samo krócej |
 | dedykowany | przeznaczony | znaczenie „specjalny" jest domysłem |
-| ewaluacja | ocena | krótsze i znane |
+| ewaluacja | ocena (poza terminem badawczym) | krótsze; w badaniach bywa terminem |
 | finalizować | kończyć | czasownik zamiast żargonu |
 | implementować | pisać / dodawać (kod) | „wdrażać" znaczy uruchomić na produkcji, to inna czynność |
 | kluczowy | najważniejszy | „kluczowy" nic nie dodaje |
@@ -28,16 +29,16 @@ duplikatów, oraz z zasady 3 standardu 2024 i zasady 27 standardu 2016.
 | Zamiast | Napisz | Dlaczego |
 |---|---|---|
 | aczkolwiek | choć / chociaż | styl urzędowy bez powodu |
-| bowiem | ponieważ | to samo, zwykle brzmi |
+| bowiem | ponieważ | poprawne, ale brzmi urzędowo |
 | dzień dzisiejszy | dzisiaj | jedno słowo |
 | jednakowoż | jednak | archaizm w urzędzie |
 | niniejszym | (usuń) | nie wnosi treści |
 | odnośnie czegoś | w sprawie czegoś | niepoprawne i długie |
-| posiadać | mieć | „posiadać" usztywnia zdanie |
+| posiadać | mieć (poza tekstem prawnym) | usztywnia zdanie |
 | przedmiotowy | ten | wskazuje palcem na dokument |
 | stosowny organ | nazwa instytucji | konkret zamiast domysłu |
 | w przedmiotowej sprawie | w tej sprawie | dwa słowa mniej |
-| w zakresie | (usuń) | fraza bez treści |
+| w zakresie | w sprawie / dotyczące | znaczenie zależy od kontekstu |
 | z uwagi na | ponieważ | mówi wprost o przyczynie |
 | zaleca się | zalecamy | mówi, kto zaleca |
 
@@ -70,7 +71,6 @@ duplikatów, oraz z zasady 3 standardu 2024 i zasady 27 standardu 2016.
 | składać podpis | podpisywać | jeden czasownik |
 | udzielić informacji | poinformować | jeden czasownik |
 | wnosić sprzeciw | sprzeciwiać się | jeden czasownik |
-| wziąć udział | uczestniczyć | jeden czasownik |
 
 ## Pleonazmy
 
@@ -105,6 +105,8 @@ duplikatów, oraz z zasady 3 standardu 2024 i zasady 27 standardu 2016.
 
 ## Formy bezosobowe
 
+Formę „my" wybierasz tylko wtedy, gdy wiadomo, kto wykonuje czynność.
+
 | Zamiast | Napisz | Dlaczego |
 |---|---|---|
 | analizuje się | analizujemy | wiadomo, kto |
@@ -113,7 +115,7 @@ duplikatów, oraz z zasady 3 standardu 2024 i zasady 27 standardu 2016.
 | podjęto decyzję | zdecydowaliśmy | wiadomo, kto |
 | wymaga się | wymagamy | wiadomo, kto |
 | wykonano | wykonaliśmy | wiadomo, kto |
-| wnioskodawca | Pan / Pani | zwrot do czytelnika |
+| wnioskodawca | osoba składająca wniosek (poza tekstem prawnym) | zwrot do czytelnika |
 | ustalono | ustaliliśmy | wiadomo, kto |
 | zostanie przesłane | prześlemy | wiadomo, kto |
 
@@ -140,13 +142,9 @@ kto" zamiast „zostało ustalone".
 | Zamiast | Napisz | Dlaczego |
 |---|---|---|
 | pod rząd | z rzędu | kalka z rosyjskiego |
-| póki co | tymczasem / na razie | kalka z rosyjskiego |
-| przepraszam za późno | przepraszam, że się spóźniłem | zdanie zamiast skrótu |
-| stawiać pytanie | zadawać pytanie | pytanie się zadaje |
-| ten sam | identyczny | zależy od sensu |
-| w temacie | w sprawie | kalka z rosyjskiego |
-| ważnie | przede wszystkim | kalka z rosyjskiego |
-| wziąć się za coś | wziąć się do czegoś | przyimek z rosyjskiego |
+| póki co | na razie (w tekście oficjalnym) | forma potoczna, nie błąd |
+| stawiać pytanie | zadawać pytanie (w tekście oficjalnym) | forma potoczna, nie błąd |
+| w temacie | w sprawie (w tekście oficjalnym) | forma potoczna, nie błąd |
 
 ## Terminy IT po polsku
 
@@ -159,7 +157,7 @@ kto" zamiast „zostało ustalone".
 | endpoint | punkt końcowy | albo zostaw i wyjaśnij |
 | feature | funkcja | zależy od kontekstu |
 | merge | scalanie | mówi, co się dzieje |
-| mock | atrapa | mówi, czym jest |
+| mock | atrapa (poza kodem) | w kodzie nazwa zostaje |
 | pull request | wniosek o scalenie | albo zostaw i wyjaśnij |
 | refactor | przebudowa kodu | mówi, co się dzieje |
 | release | wydanie | krótsze |

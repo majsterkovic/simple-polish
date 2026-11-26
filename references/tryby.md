@@ -44,9 +44,11 @@ zastrzeżenie albo liczba, zostaje w tekście po przepisaniu.
 
 | Waga pracy | Części |
 |---|---|
-| jedna drobna zmiana, jeden plik, brak ryzyka | skutek, decyzja, pewność |
-| kilka plików albo zmiana zachowania | skutek, co się zmieniło, co to znaczy dla projektu, decyzja, pewność |
-| ryzyko regresji, zmiana nieodwracalna, decyzja do podjęcia przez człowieka | pełne pięć części, a w „pewność" osobno sprawdzone i założone |
+| jedna drobna zmiana, jeden plik, brak ryzyka | trzy: skutek, decyzja, pewność |
+| kilka plików albo ryzyko regresji | pięć: skutek, co się zmieniło, co to znaczy dla projektu, decyzja, pewność |
+
+Zmiana nieodwracalna i decyzja do podjęcia przez człowieka dostają pełne pięć
+części także wtedy, gdy dotyczą jednego pliku.
 
 ## Przykład wzorcowy
 

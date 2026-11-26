@@ -37,9 +37,7 @@ gdy czytelnik ich potrzebuje. Cytowany błąd zostaje wtedy bez zmian.
 
 ## Czego nie pisać
 
-Te elementy opisują pracę agenta, a nie skutek dla projektu. W pierwszym
-zdaniu nie pojawiają się nigdy. W reszcie raportu tylko wtedy, gdy czytelnik
-musi coś z nimi zrobić.
+Te elementy opisują pracę agenta, a nie skutek dla projektu:
 
 - ścieżki plików
 - numery linii
@@ -47,8 +45,9 @@ musi coś z nimi zrobić.
 - „dodałem", „zmieniłem", „usunąłem" jako początek zdania
 - lista commitów
 
-To nie jest zakaz. Jeśli użytkownik pyta „które pliki ruszyłeś", odpowiedz
-listą plików.
+Pierwsze zdanie mówi o skutku, więc te elementy trafiają dopiero do dalszej
+części raportu. Pojawiają się tam, gdy czytelnik musi coś z nimi zrobić. Gdy
+pyta „które pliki ruszyłeś", odpowiedz listą plików.
 
 ## Pewność
 
