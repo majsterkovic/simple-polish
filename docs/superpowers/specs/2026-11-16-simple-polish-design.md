@@ -52,7 +52,7 @@ Praca idzie w trzech fazach. Każda faza działa samodzielnie.
 Poza zakresem:
 
 - upraszczanie treści merytorycznej
-- wyjaśnianie kodu
+- ocena poprawności kodu
 - ocena prawdziwości twierdzeń
 - certyfikacja zgodności z ISO 24495-1
 - język angielski
@@ -297,10 +297,11 @@ kryteriach:
 
 Rubryka leży w `evals/rubric.md`, żeby dało się ją zakwestionować.
 
-Scenariusze w `evals/scenarios/`, dwanaście, po dwa na tryb: raport po edycji
+Scenariusze w `evals/scenarios/`, czternaście: raport po edycji
 pliku, raport po nieudanym teście, „co zrobiłeś w tej sesji", odpowiedź na
 pytanie o architekturę, wyjaśnienie błędu, README, komunikat błędu, commit, opis
-PR, mail, notatka o decyzji, odpowiedź na pytanie „czy to bezpieczne".
+PR, mail, notatka o decyzji, odpowiedź na pytanie „czy to bezpieczne",
+objaśnienie pipeline'u, objaśnienie jednej funkcji.
 
 Uruchomienie: `evals/run.py` woła `claude -p` dla scenariusza, warunku (bez
 skilla i ze skillem) i przebiegu, po czym zapisuje surowe wyjścia.
@@ -360,7 +361,7 @@ Faza 2:
 
 Faza 3:
 
-- Dwanaście scenariuszy ma surowe wyniki w repo.
+- Czternaście scenariuszy ma surowe wyniki w repo.
 - Każda liczba w README ma pokrycie w `check_numbers.py`.
 - Hook nie blokuje zapisu pliku.
 - Plugin instaluje się przez `npx skills add`.
