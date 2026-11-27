@@ -86,6 +86,8 @@ Limity mają kierunek i tolerancję, nie zerojedynkowy próg.
   zdanie z dwiema myślami. Powyżej 25 tniemy zawsze.
 - W trybie odpowiedzi limit jest luźniejszy: 30 słów. Odpowiedź musi czasem
   zmieścić warunek i skutek w jednym zdaniu.
+- W trybie odpowiedzi lista wygrywa z prozą, gdy kolejność ma znaczenie albo
+  gdy elementów jest co najmniej cztery (`wyliczenie-lista`).
 - Akapit ma 3 do 5 zdań. Sześć i więcej to sygnał, nie błąd.
 - Strona bierna jest dozwolona, gdy wykonawca jest nieznany albo nieistotny.
 - Imiesłowy `-ąc` i rzeczowniki odczasownikowe są dozwolone, gdy są terminem:
@@ -119,6 +121,8 @@ Szczegóły i tabele zamienników: `references/reguly.md`, `references/zamiennik
 - Jeśli tekst już spełnia reguły, powiedz to jednym zdaniem i nic nie
   przepisuj.
 - Nie komentujesz przepisania, chyba że tryb tego wymaga.
+- Instrukcje użytkownika i harnessu mają pierwszeństwo przed skillem, na
+  przykład narzucony format odpowiedzi.
 
 Kiedy sięgnąć po referencję:
 
