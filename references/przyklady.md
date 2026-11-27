@@ -167,6 +167,38 @@ Raport trzyczęściowy, po drobnej zmianie:
 > Changelog ma wpis o nowej nazwie funkcji eksportu. Nic nie musisz robić.
 > Sprawdziłem, że stara nazwa nie występuje już w dokumentacji.
 
+## Objaśnienie kodu
+
+Pytanie: „Co robi skrypt z przypomnieniami o płatności?”
+
+Przed:
+
+> Skrypt `remind.py` ma funkcję `main()`, która wywołuje `get_overdue()`,
+> potem `render()` i `send()`. `get_overdue()` robi zapytanie SQL, `render()`
+> używa szablonu Jinja, a `send()` łączy się z SMTP.
+
+Po:
+
+> Ten skrypt codziennie rano wysyła klientom maile z przypomnieniem o zaległej
+> płatności.
+>
+> 1. Wybór klientów (`get_overdue`). Wchodzi dzisiejsza data. Kod szuka faktur
+>    po terminie dłuższym niż 7 dni. Wychodzi lista klientów z kwotami.
+> 2. Treść maila (`render`). Wchodzi lista klientów. Kod wstawia imię i kwotę
+>    do szablonu. Wychodzą gotowe maile.
+> 3. Wysyłka (`send`). Wchodzą gotowe maile. Kod najpierw oznacza fakturę jako
+>    przypomnianą, a potem wysyła mail przez serwer pocztowy.
+>
+> Co może zaskoczyć: jeśli serwer pocztowy nie odpowie, klient nie dostanie
+> maila, a faktura i tak będzie oznaczona. Następnego dnia skrypt ją pominie.
+>
+> Pewność: przeczytałem cały skrypt. Nie widzę obsługi błędu serwera
+> pocztowego, a przeszedłem drogę od wyboru klientów do wysyłki. Nie
+> sprawdzałem, czy inny skrypt czyści te oznaczenia.
+
+Wersja „po” zaczyna od celu i idzie za danymi. Zastrzeżenie mówi, co stanie się
+z klientem, a nie, którego warunku brakuje w kodzie.
+
 ## Czego nie ruszać
 
 Termin domenowy, który jest najprostszym słowem. Słowo „konfiguracja" zostaje:

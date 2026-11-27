@@ -14,6 +14,11 @@ Zadaj dwa pytania po kolei. Pierwsza odpowiedź „tak" rozstrzyga.
 W każdym innym przypadku, także w razie wątpliwości, pisz w trybie
 **Odpowiedź**: pytanie, wyjaśnienie, dyskusja, „dlaczego tak".
 
+Pytanie o to, jak działa istniejący kod, to wariant Odpowiedzi: objaśnienie
+kodu. Pytanie „jak to działa” zostaje objaśnieniem także wtedy, gdy przed
+chwilą edytowałeś ten kod. Raportem jest pytanie o to, co zrobiłeś. Układ
+i zasady: `references/objasnianie-kodu.md`.
+
 ## Tabela trybów
 
 | Tryb | Kiedy | Co rządzi tekstem |

@@ -25,6 +25,9 @@ Trzy reguły trzymają całość:
 3. **Tryb nie zmienia faktów.** Żadna reguła nie pozwala pominąć ostrzeżenia
    o akcji nieodwracalnej ani dopisać twierdzenia, którego agent nie sprawdził.
 
+Pytanie o to, jak działa istniejący kod, to wariant Odpowiedzi: objaśnienie
+kodu. Układ: cel, etapy, co może zaskoczyć, pewność.
+
 ## Raport z pracy
 
 Układ: skutek → co się zmieniło → co to znaczy dla projektu → decyzja
@@ -123,4 +126,5 @@ Kiedy sięgnąć po referencję:
 - potrzebujesz uzasadnienia reguły albo pełnej listy zasad — `references/reguly.md`
 - szukasz prostszego zamiennika — `references/zamienniki.md`
 - opisujesz wykonaną pracę — `references/styl-agenta.md`
+- objaśniasz istniejący kod — `references/objasnianie-kodu.md`
 - chcesz zobaczyć before/after — `references/przyklady.md`
