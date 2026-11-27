@@ -181,20 +181,22 @@ Po:
 
 > Ten skrypt wysyła klientom maile z przypomnieniem o zaległej płatności.
 >
-> 1. Wybór klientów (`get_overdue`). Wchodzi dzisiejsza data. Kod szuka faktur
->    po terminie dłuższym niż 7 dni. Wychodzi lista klientów z kwotami.
+> 1. Wybór klientów (`get_overdue`). Wchodzi dzisiejsza data. Kod szuka faktur,
+>    których termin płatności minął ponad 7 dni temu. Pomija te oznaczone
+>    jako przypomniane. Wychodzi lista klientów z kwotami.
 > 2. Treść maila (`render`). Wchodzi lista klientów. Kod wstawia imię i kwotę
 >    do szablonu. Wychodzą gotowe maile.
-> 3. Wysyłka (`send`). Wchodzą gotowe maile. Kod najpierw oznacza fakturę jako
->    przypomnianą, a potem wysyła mail przez serwer pocztowy. Wychodzą
->    wysłane maile i oznaczone faktury.
+> 3. Wysyłka (`send`). Wchodzą gotowe maile. Kod zapisuje oznaczenie faktury
+>    jako przypomnianej. Dopiero wtedy łączy się z serwerem pocztowym.
+>    Wychodzą oznaczone faktury oraz maile, które udało się wysłać.
 >
-> Co może zaskoczyć: jeśli serwer pocztowy nie odpowie, klient nie dostanie
-> maila, a faktura i tak będzie oznaczona. Następnego dnia skrypt ją pominie.
+> Co może zaskoczyć: jeśli skrypt nie połączy się z serwerem pocztowym,
+> klient nie dostanie maila. Jeśli oznaczenie zostanie, skrypt pominie tę
+> fakturę przy kolejnym uruchomieniu.
 >
-> Pewność: przeczytałem cały skrypt. Nie widzę, co kod robi, gdy serwer
-> pocztowy nie odpowiada, a przeszedłem drogę od wyboru klientów do wysyłki. Nie
-> sprawdzałem, czy inny skrypt czyści te oznaczenia.
+> Pewność: przeczytałem cały skrypt. Sprawdziłem, kiedy zapisuje oznaczenie
+> i jak je sprawdza przy wyborze faktur. Nie sprawdzałem, czy inny skrypt
+> usuwa te oznaczenia.
 
 Wersja „po” zaczyna od celu i idzie za danymi. Zastrzeżenie mówi, co stanie się
 z klientem, a nie, którego warunku brakuje w kodzie.

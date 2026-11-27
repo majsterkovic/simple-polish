@@ -25,8 +25,8 @@ z pracy.
 3. `Co może zaskoczyć:` rzeczy, których czytelnik się nie spodziewa.
 4. `Pewność:` co przeczytałeś, a co wnioskujesz z nazw.
 
-Etapy mają kolejność, więc lista wygrywa tu z prozą. Pozostałe części piszesz
-prozą, z etykietą i dwukropkiem, bez bolda.
+Części `Co może zaskoczyć:` i `Pewność:` piszesz prozą. Ich etykiety
+zapisujesz zwykłym tekstem.
 
 ## Co może zaskoczyć
 
@@ -75,9 +75,10 @@ obsługi”. Brak obsługi w jednej funkcji nie znaczy, że nie ma jej wyżej.
 Etap to krok przepływu danych między funkcjami albo modułami. Linia w środku
 funkcji nie jest etapem.
 
-Jedna funkcja albo jeden krok dostaje dwa, trzy zdania prozy: cel i pewność.
-Jeśli coś w niej może zaskoczyć, dopisujesz to jednym zdaniem. Gdy etapy są co
-najmniej dwa, piszesz listę.
+Jedną funkcję albo jeden krok objaśniasz w dwóch lub trzech zdaniach prozy.
+Podajesz cel i mówisz, co sprawdziłeś. Jeśli coś może zaskoczyć, opisujesz to
+jednym zdaniem w ramach tego limitu. Gdy etapy są co najmniej dwa, piszesz
+listę.
 
 > Ta funkcja zamienia kwotę w groszach na tekst do faktury, na przykład 12345
 > na „123,45 zł”. Przeczytałem ją całą. Nie sprawdzałem, czy ktoś wywołuje ją
@@ -102,16 +103,16 @@ Pytanie: „Jak działa import zamówień?”
 > 2. Sprawdzenie (`validate`). Wchodzi lista zamówień. Kod odrzuca zamówienia
 >    bez numeru klienta i z ujemną kwotą. Wychodzą dwie listy: poprawne
 >    i odrzucone.
-> 3. Zapis (`save_orders`). Wchodzą poprawne zamówienia. Kod zapisuje je
->    w bazie po jednym. Wychodzi wpis w logu z liczbą zapisanych zamówień.
+> 3. Zapis (`save_orders`). Wchodzą poprawne zamówienia. Kod zatwierdza każdy
+>    zapis osobno. Jeśli zapis się nie uda, kod zapisuje błąd w logu i kończy
+>    import. Wychodzą zapisane zamówienia oraz wpis w logu, jeśli wystąpił błąd.
 >
-> Co może zaskoczyć: zapis idzie po jednym zamówieniu, bez transakcji. Jeśli
-> baza odrzuci jedno zamówienie, wcześniejsze zostają w bazie, a reszta
-> przepada. Kod nie zgłasza przy tym błędu.
+> Co może zaskoczyć: jeśli baza odrzuci jedno zamówienie, wcześniejsze
+> zostają w bazie. Import kończy się przed zapisem pozostałych zamówień.
 >
-> Pewność: przeczytałem wszystkie trzy etapy. Widzę obsługę ujemnej kwoty. Nie
-> widzę, co kod robi, gdy baza odrzuci zapis, a przeszedłem całą ścieżkę od
-> wczytania do zapisu. Nie sprawdzałem, jak często baza odrzuca zamówienia.
+> Pewność: przeczytałem wszystkie trzy etapy. Sprawdziłem, że kod zatwierdza
+> każdy zapis osobno i kończy import po błędzie. Nie sprawdzałem, czy osobne
+> zadanie ponawia import.
 
 ## Kontrprzykład
 
@@ -120,7 +121,8 @@ To samo objaśnienie ułożone według plików:
 > W `import/reader.py` jest funkcja `read_orders()`, która używa
 > `csv.DictReader`. W `import/validate.py` jest `validate()` z kilkoma
 > warunkami. `import/db.py` zawiera `save_orders()`, która wywołuje
-> `session.add()` w pętli. Uwaga: `save_orders()` nie używa transakcji.
+> `session.add()` w pętli. Uwaga: kod wywołuje `session.commit()` po każdym
+> zamówieniu.
 
 Dlaczego jest gorszy: czytelnik nie wie, po co ten kod istnieje ani w jakiej
 kolejności płyną dane. Zastrzeżenie opisuje warunek w kodzie, a nie to, co
