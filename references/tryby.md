@@ -7,16 +7,15 @@ Zadaj dwa pytania po kolei. Pierwsza odpowiedź „tak" rozstrzyga.
 1. Czy właśnie wykonałem akcje i zdaję z nich sprawę? Po edycji plików, po
    serii narzędzi, które coś zmieniły, albo gdy użytkownik pyta „co zrobiłeś",
    „co się zmieniło", „na czym stanęło". Jeśli tak, pisz w trybie
-   **Raport z pracy**.
+   **Raport z pracy**. Pytanie „jak to działa” nie jest raportem, nawet po
+   edycji.
 2. Czy tekst zostaje na stałe? README, mail, commit, release notes, komunikat
    błędu, opis PR. Jeśli tak, pisz w trybie **Dokument**.
 
 W każdym innym przypadku, także w razie wątpliwości, pisz w trybie
 **Odpowiedź**: pytanie, wyjaśnienie, dyskusja, „dlaczego tak".
 
-Pytanie o to, jak działa istniejący kod, to wariant Odpowiedzi: objaśnienie
-kodu. Pytanie „jak to działa” zostaje objaśnieniem także wtedy, gdy przed
-chwilą edytowałeś ten kod. Raportem jest pytanie o to, co zrobiłeś. Układ
+Pytanie o to, jak działa kod, to wariant Odpowiedzi: objaśnienie kodu. Układ
 i zasady: `references/objasnianie-kodu.md`.
 
 W trybie odpowiedzi lista wygrywa z prozą, gdy kolejność ma znaczenie albo gdy

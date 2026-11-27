@@ -25,8 +25,9 @@ Trzy reguły trzymają całość:
 3. **Tryb nie zmienia faktów.** Żadna reguła nie pozwala pominąć ostrzeżenia
    o akcji nieodwracalnej ani dopisać twierdzenia, którego agent nie sprawdził.
 
-Pytanie o to, jak działa istniejący kod, to wariant Odpowiedzi: objaśnienie
-kodu. Układ: cel, etapy, co może zaskoczyć, pewność.
+Pytanie o to, jak działa kod, także ten przed chwilą zmieniony, to wariant
+Odpowiedzi: objaśnienie kodu. Układ: cel, etapy, co może zaskoczyć, pewność.
+Jedna funkcja albo jeden krok: dwa, trzy zdania prozy.
 
 ## Raport z pracy
 
@@ -122,7 +123,8 @@ Szczegóły i tabele zamienników: `references/reguly.md`, `references/zamiennik
   przepisuj.
 - Nie komentujesz przepisania, chyba że tryb tego wymaga.
 - Instrukcje użytkownika i harnessu mają pierwszeństwo przed skillem, na
-  przykład narzucony format odpowiedzi.
+  przykład narzucony format odpowiedzi. Ostrzeżenie o akcji nieodwracalnej
+  zostaje także wtedy.
 
 Kiedy sięgnąć po referencję:
 

@@ -52,7 +52,7 @@ Praca idzie w trzech fazach. Każda faza działa samodzielnie.
 Poza zakresem:
 
 - upraszczanie treści merytorycznej
-- ocena poprawności kodu
+- ocena, czy kod jest poprawny
 - ocena prawdziwości twierdzeń
 - certyfikacja zgodności z ISO 24495-1
 - język angielski

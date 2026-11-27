@@ -179,21 +179,21 @@ Przed:
 
 Po:
 
-> Ten skrypt codziennie rano wysyła klientom maile z przypomnieniem o zaległej
-> płatności.
+> Ten skrypt wysyła klientom maile z przypomnieniem o zaległej płatności.
 >
 > 1. Wybór klientów (`get_overdue`). Wchodzi dzisiejsza data. Kod szuka faktur
 >    po terminie dłuższym niż 7 dni. Wychodzi lista klientów z kwotami.
 > 2. Treść maila (`render`). Wchodzi lista klientów. Kod wstawia imię i kwotę
 >    do szablonu. Wychodzą gotowe maile.
 > 3. Wysyłka (`send`). Wchodzą gotowe maile. Kod najpierw oznacza fakturę jako
->    przypomnianą, a potem wysyła mail przez serwer pocztowy.
+>    przypomnianą, a potem wysyła mail przez serwer pocztowy. Wychodzą
+>    wysłane maile i oznaczone faktury.
 >
 > Co może zaskoczyć: jeśli serwer pocztowy nie odpowie, klient nie dostanie
 > maila, a faktura i tak będzie oznaczona. Następnego dnia skrypt ją pominie.
 >
-> Pewność: przeczytałem cały skrypt. Nie widzę obsługi błędu serwera
-> pocztowego, a przeszedłem drogę od wyboru klientów do wysyłki. Nie
+> Pewność: przeczytałem cały skrypt. Nie widzę, co kod robi, gdy serwer
+> pocztowy nie odpowiada, a przeszedłem drogę od wyboru klientów do wysyłki. Nie
 > sprawdzałem, czy inny skrypt czyści te oznaczenia.
 
 Wersja „po” zaczyna od celu i idzie za danymi. Zastrzeżenie mówi, co stanie się
