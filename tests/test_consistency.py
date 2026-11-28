@@ -3,7 +3,7 @@ import sys
 
 from rules import ROOT, RULES
 
-FILES = ["SKILL.md", "references/reguly.md", "references/przyklady.md"]
+FILES = ["SKILL.md", "references/rules.md", "references/examples.md"]
 
 
 def frontmatter(text: str) -> dict[str, str]:

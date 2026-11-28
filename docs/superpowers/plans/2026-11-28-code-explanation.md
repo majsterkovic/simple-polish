@@ -4,11 +4,11 @@
 
 **Goal:** Dodać do trybu Odpowiedź wariant „Objaśnienie kodu” i zamknąć cztery drobne braki z przeglądu.
 
-**Architecture:** Wariant żyje w nowym pliku `references/objasnianie-kodu.md`. SKILL.md i `tryby.md` dostają tylko krótkie odsyłacze, żeby SKILL.md został mały. Poprawki z przeglądu to pojedyncze zdania w SKILL.md, `tryby.md`, README i specu. Każdą zmianę pilnuje test w stylu istniejących: skrypt z `main() -> int`, który szuka etykiet i odsyłaczy.
+**Architecture:** Wariant żyje w nowym pliku `references/code-explanation.md`. SKILL.md i `modes.md` dostają tylko krótkie odsyłacze, żeby SKILL.md został mały. Poprawki z przeglądu to pojedyncze zdania w SKILL.md, `modes.md`, README i specu. Każdą zmianę pilnuje test w stylu istniejących: skrypt z `main() -> int`, który szuka etykiet i odsyłaczy.
 
 **Tech Stack:** Markdown, Python 3 (tylko biblioteka standardowa), git.
 
-**Spec:** `docs/superpowers/specs/2026-11-28-objasnianie-kodu-design.md`
+**Spec:** `docs/superpowers/specs/2026-11-28-code-explanation-design.md`
 
 ## Global Constraints
 
@@ -24,7 +24,7 @@
 
 1. Pytanie o jedną funkcję. Model nie powinien dawać listy etapów, tylko dwa, trzy zdania prozy. Pilnuje tego sekcja „Gdy kodu jest mało” w zadaniu 1.
 2. Użytkownik sam używa nazw z kodu. Model nie powinien chować identyfikatorów w nawiasach. Pilnuje tego sekcja „Odbiorca” w zadaniu 1.
-3. Pytanie „jak to działa” zaraz po edycji tego kodu. To objaśnienie, nie raport z pracy. Pilnuje tego zdanie w `tryby.md` w zadaniu 1.
+3. Pytanie „jak to działa” zaraz po edycji tego kodu. To objaśnienie, nie raport z pracy. Pilnuje tego zdanie w `modes.md` w zadaniu 1.
 4. Kod bez niczego nietypowego. Model pisze jedno zdanie zamiast wymyślać zastrzeżenia. Pilnuje tego needle „nic nietypowego” w zadaniu 1.
 5. Twierdzenie „nie widzę obsługi” bez przeczytania całej ścieżki. Pilnuje tego needle „całej ścieżki” w zadaniu 1.
 
@@ -33,16 +33,16 @@
 ### Task 1: Wariant „Objaśnienie kodu”
 
 **Files:**
-- Create: `references/objasnianie-kodu.md`
-- Create: `tests/test_objasnianie.py`
+- Create: `references/code-explanation.md`
+- Create: `tests/test_code_explanation.py`
 - Modify: `SKILL.md:27` (po trzeciej regule) i `SKILL.md:126` (lista „Kiedy sięgnąć po referencję”)
-- Modify: `references/tryby.md:15` (po akapicie o trybie Odpowiedź)
-- Modify: `references/przyklady.md:169` (nowa sekcja przed `## Czego nie ruszać`)
+- Modify: `references/modes.md:15` (po akapicie o trybie Odpowiedź)
+- Modify: `references/examples.md:169` (nowa sekcja przed `## Czego nie ruszać`)
 
 **Interfaces:**
-- Produces: nagłówki w `references/objasnianie-kodu.md`, w tej kolejności: `## Kiedy`, `## Układ`, `## Co może zaskoczyć`, `## Pewność`, `## Gdy kodu jest mało`, `## Odbiorca`, `## Przykład wzorcowy`, `## Kontrprzykład`. Sekcja `## Objaśnienie kodu` w `references/przyklady.md`.
+- Produces: nagłówki w `references/code-explanation.md`, w tej kolejności: `## Kiedy`, `## Układ`, `## Co może zaskoczyć`, `## Pewność`, `## Gdy kodu jest mało`, `## Odbiorca`, `## Przykład wzorcowy`, `## Kontrprzykład`. Sekcja `## Objaśnienie kodu` w `references/examples.md`.
 
-- [ ] **Step 1: Write the failing test `tests/test_objasnianie.py`**
+- [ ] **Step 1: Write the failing test `tests/test_code_explanation.py`**
 
 ```python
 import re
@@ -50,7 +50,7 @@ import sys
 
 from rules import ROOT
 
-REF = "references/objasnianie-kodu.md"
+REF = "references/code-explanation.md"
 HEADERS = ["## Kiedy", "## Układ", "## Co może zaskoczyć", "## Pewność",
            "## Gdy kodu jest mało", "## Odbiorca", "## Przykład wzorcowy",
            "## Kontrprzykład"]
@@ -62,7 +62,7 @@ NEEDLES = {
     "## Odbiorca": ["nazw z kodu"],
 }
 
-def section(text: str, header: str) -> str: ...   # jak w test_przyklady.py
+def section(text: str, header: str) -> str: ...   # jak w test_examples.py
 
 def numbered(body: str) -> int:
     return len(re.findall(r"^> \d+\. ", body, re.M))
@@ -74,16 +74,16 @@ Asercje w `main()`, każda jako osobny komunikat `FAIL:`:
 - `numbered(section(ref, "## Przykład wzorcowy")) >= 3`.
 - `numbered(section(ref, "## Gdy kodu jest mało")) == 0`.
 - `"Co może zaskoczyć:"` występuje w `section(ref, "## Przykład wzorcowy")`.
-- `REF` występuje w `SKILL.md` i w `references/tryby.md`.
-- `references/tryby.md` zawiera `„jak to działa”`.
+- `REF` występuje w `SKILL.md` i w `references/modes.md`.
+- `references/modes.md` zawiera `„jak to działa”`.
 - `section(przyklady, "## Objaśnienie kodu")` nie jest pusta, ma `"Co może zaskoczyć:"` i `numbered(...) >= 3`.
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `python3 tests/test_objasnianie.py`
-Expected: `FAIL: brak pliku: references/objasnianie-kodu.md`, kod wyjścia 1.
+Run: `python3 tests/test_code_explanation.py`
+Expected: `FAIL: brak pliku: references/code-explanation.md`, kod wyjścia 1.
 
-- [ ] **Step 3: Write `references/objasnianie-kodu.md`**
+- [ ] **Step 3: Write `references/code-explanation.md`**
 
 Treść każdej sekcji bierzesz z części „Wariant »Objaśnienie kodu«” w specu:
 - `## Kiedy`: przykłady pytań ze specu. Wariant należy do trybu Odpowiedź.
@@ -95,7 +95,7 @@ Treść każdej sekcji bierzesz z części „Wariant »Objaśnienie kodu«” w
 - `## Przykład wzorcowy`: cytat `>` z celem, co najmniej trzema etapami zapisanymi jako `> 1. `, jedną rzeczą w `Co może zaskoczyć:` i częścią `Pewność:`. Proponowany temat: import zamówień z CSV, czyli wczytanie, sprawdzenie i zapis. Zaskoczenie: pusty wiersz zatrzymuje import w połowie bez komunikatu.
 - `## Kontrprzykład`: to samo objaśnienie ułożone według plików i funkcji. Pod spodem jedno, dwa zdania, dlaczego jest gorszy.
 
-- [ ] **Step 4: Add pointers in `SKILL.md` and `references/tryby.md`**
+- [ ] **Step 4: Add pointers in `SKILL.md` and `references/modes.md`**
 
 `SKILL.md`, akapit po trzeciej regule (linia 27), dosłownie:
 
@@ -107,31 +107,31 @@ kodu. Układ: cel, etapy, co może zaskoczyć, pewność.
 `SKILL.md`, nowa pozycja na liście referencji po `opisujesz wykonaną pracę`, dosłownie:
 
 ```markdown
-- objaśniasz istniejący kod — `references/objasnianie-kodu.md`
+- objaśniasz istniejący kod — `references/code-explanation.md`
 ```
 
-`references/tryby.md`, nowy akapit po linii 15, dosłownie:
+`references/modes.md`, nowy akapit po linii 15, dosłownie:
 
 ```markdown
 Pytanie o to, jak działa istniejący kod, to wariant Odpowiedzi: objaśnienie
 kodu. Pytanie „jak to działa” zostaje objaśnieniem także wtedy, gdy przed
 chwilą edytowałeś ten kod. Raportem jest pytanie o to, co zrobiłeś. Układ
-i zasady: `references/objasnianie-kodu.md`.
+i zasady: `references/code-explanation.md`.
 ```
 
-- [ ] **Step 5: Add `## Objaśnienie kodu` to `references/przyklady.md`**
+- [ ] **Step 5: Add `## Objaśnienie kodu` to `references/examples.md`**
 
 Umieść sekcję przed `## Czego nie ruszać`. Daj jedno pytanie użytkownika, wersję „Przed” opisującą pliki i funkcje oraz wersję „Po” w układzie z kroku 3. Temat ma być inny niż w przykładzie wzorcowym, żeby model nie uczył się jednego tekstu.
 
 - [ ] **Step 6: Run tests to verify they pass**
 
 Run: `python3 tests/run.py`
-Expected: wszystkie pliki `OK`, w tym `test_objasnianie.py: OK` i `test_skill_md.py: OK`. `wc -l SKILL.md` pokazuje najwyżej 150.
+Expected: wszystkie pliki `OK`, w tym `test_code_explanation.py: OK` i `test_skill_md.py: OK`. `wc -l SKILL.md` pokazuje najwyżej 150.
 
 - [ ] **Step 7: Commit**
 
 ```bash
-git add references/objasnianie-kodu.md references/tryby.md references/przyklady.md SKILL.md tests/test_objasnianie.py docs/superpowers/specs/2026-11-28-objasnianie-kodu-design.md docs/superpowers/plans/2026-11-28-objasnianie-kodu.md
+git add references/code-explanation.md references/modes.md references/examples.md SKILL.md tests/test_code_explanation.py docs/superpowers/specs/2026-11-28-code-explanation-design.md docs/superpowers/plans/2026-11-28-code-explanation.md
 git commit -m "feat: wariant objasniania kodu w trybie odpowiedz"
 ```
 
@@ -139,11 +139,11 @@ git commit -m "feat: wariant objasniania kodu w trybie odpowiedz"
 
 **Files:**
 - Modify: `SKILL.md:84-85` (sekcja „Progi, nie zakazy”) i `SKILL.md:110-119` (sekcja „Granice”)
-- Modify: `references/tryby.md` (po akapicie dodanym w zadaniu 1)
-- Test: `tests/test_skill_md.py`, `tests/test_tryby.py`
+- Modify: `references/modes.md` (po akapicie dodanym w zadaniu 1)
+- Test: `tests/test_skill_md.py`, `tests/test_modes.py`
 
 **Interfaces:**
-- Consumes: akapit o objaśnieniu w `references/tryby.md` z zadania 1.
+- Consumes: akapit o objaśnieniu w `references/modes.md` z zadania 1.
 
 - [ ] **Step 1: Write the failing tests**
 
@@ -155,11 +155,11 @@ for needle in ("kolejność ma znaczenie", "mają pierwszeństwo przed skillem")
         errors.append(f"brak zdania: {needle}")
 ```
 
-W `tests/test_tryby.py` dopisz `"kolejność ma znaczenie"` do `NEEDLES`.
+W `tests/test_modes.py` dopisz `"kolejność ma znaczenie"` do `NEEDLES`.
 
 - [ ] **Step 2: Run tests to verify they fail**
 
-Run: `python3 tests/test_skill_md.py; python3 tests/test_tryby.py`
+Run: `python3 tests/test_skill_md.py; python3 tests/test_modes.py`
 Expected: `FAIL: brak zdania: kolejność ma znaczenie`, `FAIL: brak zdania: mają pierwszeństwo przed skillem`, `FAIL: brak: kolejność ma znaczenie`.
 
 - [ ] **Step 3: Add the sentences**
@@ -178,7 +178,7 @@ Expected: `FAIL: brak zdania: kolejność ma znaczenie`, `FAIL: brak zdania: maj
   przykład narzucony format odpowiedzi.
 ```
 
-`references/tryby.md`, nowy akapit po akapicie z zadania 1, z tym samym zdaniem o liście co w SKILL.md.
+`references/modes.md`, nowy akapit po akapicie z zadania 1, z tym samym zdaniem o liście co w SKILL.md.
 
 - [ ] **Step 4: Run tests to verify they pass**
 
@@ -188,7 +188,7 @@ Expected: wszystkie `OK`. `wc -l SKILL.md` pokazuje najwyżej 150.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add SKILL.md references/tryby.md tests/test_skill_md.py tests/test_tryby.py
+git add SKILL.md references/modes.md tests/test_skill_md.py tests/test_modes.py
 git commit -m "fix: lista a proza i pierwszenstwo instrukcji harnessu"
 ```
 
@@ -201,22 +201,22 @@ git commit -m "fix: lista a proza i pierwszenstwo instrukcji harnessu"
 - Test: `tests/test_readme.py`
 
 **Interfaces:**
-- Produces: `dokument_items(text: str) -> list[str]` w `tests/test_readme.py`.
+- Produces: `document_items(text: str) -> list[str]` w `tests/test_readme.py`.
 
 - [ ] **Step 1: Write the failing test**
 
 W `tests/test_readme.py` dodaj:
 
 ```python
-def dokument_items(text: str) -> list[str]:
+def document_items(text: str) -> list[str]:
     """Rodzaje tekstu z kolumny „Kiedy” w wierszu | **Dokument** |."""
 ```
 
 Funkcja bierze pierwszą linię zaczynającą się od `| **Dokument** |`, drugą kolumnę tabeli, ucina prefiks `tekst, który zostaje:` i dzieli resztę po `, `. Brak wiersza daje pustą listę.
 
 Asercje w `main()`:
-- `dokument_items(skill)` nie jest pusta.
-- Każdy element `dokument_items(skill)` występuje w `dokument_items(readme)`. Komunikat: `FAIL: README, wiersz Dokument: brak „{item}”`.
+- `document_items(skill)` nie jest pusta.
+- Każdy element `document_items(skill)` występuje w `document_items(readme)`. Komunikat: `FAIL: README, wiersz Dokument: brak „{item}”`.
 - Dopisz do `NEEDLES`: `"objaśni"` i `"czternastu scenariuszach"`.
 
 - [ ] **Step 2: Run test to verify it fails**

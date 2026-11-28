@@ -31,76 +31,76 @@ def frontmatter_parses() -> list[str]:
 
 
 def report_format_in_skill() -> list[str]:
-    raport = section(read("SKILL.md"), "## Raport z pracy")
+    report = section(read("SKILL.md"), "## Raport z pracy")
     needles = ["Co się zmieniło:", "Co to znaczy dla projektu:", "Co masz zrobić:",
                "Pewność:", "bez bolda", "nie listę plików", "ani funkcje"]
-    return [f"SKILL.md Raport z pracy: brak „{n}”" for n in needles if n not in raport]
+    return [f"SKILL.md Raport z pracy: brak „{n}”" for n in needles if n not in report]
 
 
 def mode_order() -> list[str]:
-    wybor = section(read("references/tryby.md"), "## Jak wybrać tryb")
+    mode_selection = section(read("references/modes.md"), "## Jak wybrać tryb")
     errors = []
-    first = wybor.find("1. ")
-    if "wykonałem akcje" not in wybor[first:wybor.find("2. ")]:
-        errors.append("tryby.md: pierwsze pytanie nie dotyczy wykonanych akcji")
-    if "Trzy razy „nie”" in wybor or "Trzy razy „nie\"" in wybor:
-        errors.append("tryby.md: zdanie o trzech „nie” przeczy domyślnej Odpowiedzi")
+    first = mode_selection.find("1. ")
+    if "wykonałem akcje" not in mode_selection[first:mode_selection.find("2. ")]:
+        errors.append("modes.md: pierwsze pytanie nie dotyczy wykonanych akcji")
+    if "Trzy razy „nie”" in mode_selection or "Trzy razy „nie\"" in mode_selection:
+        errors.append("modes.md: zdanie o trzech „nie” przeczy domyślnej Odpowiedzi")
     return errors
 
 
 def examples_keep_content() -> list[str]:
-    text = read("references/przyklady.md")
+    text = read("references/examples.md")
     errors = []
-    dokument = section(text, "## Tryb dokument")
-    if "konfiguracyjn" not in dokument.split("README, po:")[-1].split("Komunikat")[0]:
-        errors.append("przyklady.md: README po zamienia termin „konfiguracyjne”")
-    if "2.0" in dokument:
-        errors.append("przyklady.md: README po dopisuje wersję 2.0")
-    if ".env" in dokument:
-        errors.append("przyklady.md: komunikat błędu dopisuje plik .env")
-    rodo = section(text, "## Czego nie ruszać")
-    if rodo.count("z zastrzeżeniem art. 28") < 2 or "innej firmie" in rodo:
-        errors.append("przyklady.md: przykład RODO zmienia treść zastrzeżenia")
-    ostrz = section(text, "## Reguła: `ostrzezenie-zawsze`")
-    if "Źródło:" not in ostrz:
-        errors.append("przyklady.md: para ostrzezenie-zawsze nie pokazuje źródła z ostrzeżeniem")
+    document_section = section(text, "## Tryb dokument")
+    if "konfiguracyjn" not in document_section.split("README, po:")[-1].split("Komunikat")[0]:
+        errors.append("examples.md: README po zamienia termin „konfiguracyjne”")
+    if "2.0" in document_section:
+        errors.append("examples.md: README po dopisuje wersję 2.0")
+    if ".env" in document_section:
+        errors.append("examples.md: komunikat błędu dopisuje plik .env")
+    gdpr_example = section(text, "## Czego nie ruszać")
+    if gdpr_example.count("z zastrzeżeniem art. 28") < 2 or "innej firmie" in gdpr_example:
+        errors.append("examples.md: przykład RODO zmienia treść zastrzeżenia")
+    warning_example = section(text, "## Reguła: `ostrzezenie-zawsze`")
+    if "Źródło:" not in warning_example:
+        errors.append("examples.md: para ostrzezenie-zawsze nie pokazuje źródła z ostrzeżeniem")
     if "przejrzeć" not in section(text, "## Reguła: `jedna-mysl`").split("Dobrze:")[-1]:
-        errors.append("przyklady.md: jedna-mysl gubi treść w wersji Dobrze")
+        errors.append("examples.md: jedna-mysl gubi treść w wersji Dobrze")
     if "Ustaliliśmy" in section(text, "## Reguła: `bezosobowe`") and "znany z kontekstu" not in section(text, "## Reguła: `bezosobowe`"):
-        errors.append("przyklady.md: bezosobowe wymyśla wykonawcę")
+        errors.append("examples.md: bezosobowe wymyśla wykonawcę")
     return errors
 
 
-def implementowac_not_deploy() -> list[str]:
-    for line in read("references/zamienniki.md").splitlines():
+def implement_is_distinct_from_deploy() -> list[str]:
+    for line in read("references/word-alternatives.md").splitlines():
         if line.startswith("| implementować |"):
             replacement = line.split("|")[2]
             if "wdraża" in replacement:
-                return ["zamienniki.md: implementować → wdrażać myli pisanie kodu z wdrożeniem"]
+                return ["word-alternatives.md: implementować → wdrażać myli pisanie kodu z wdrożeniem"]
     return []
 
 
-def opis_z_polskimi_znakami() -> list[str]:
+def description_has_polish_characters() -> list[str]:
     text = read("SKILL.md")
     block = text[4:text.find("\n---", 4)]
-    opis = next((line for line in block.splitlines()
+    description = next((line for line in block.splitlines()
                  if line.startswith("description:")), "")
     return [f"SKILL.md opis: brak polskich znaków w „{word}”"
             for word in ("Używaj", "każdym", "błędów", "zrobiłeś")
-            if word not in opis]
+            if word not in description]
 
 
-def styl_agenta_bez_sprzecznosci() -> list[str]:
-    text = section(read("references/styl-agenta.md"), "## Czego nie pisać")
+def agent_style_is_consistent() -> list[str]:
+    text = section(read("references/agent-style.md"), "## Czego nie pisać")
     errors = []
     if "nigdy" in text:
-        errors.append("styl-agenta.md: „nigdy” przeczy dopuszczalnej liście plików")
+        errors.append("agent-style.md: „nigdy” przeczy dopuszczalnej liście plików")
     if "To nie jest zakaz" in text:
-        errors.append("styl-agenta.md: „to nie jest zakaz” przeczy zdaniu o „nigdy”")
+        errors.append("agent-style.md: „to nie jest zakaz” przeczy zdaniu o „nigdy”")
     return errors
 
 
-def zrodla_w_readme() -> list[str]:
+def readme_credits_sources() -> list[str]:
     text = read("README.md")
     errors = []
     if "strict i flavored" not in text:
@@ -112,23 +112,23 @@ def zrodla_w_readme() -> list[str]:
     return errors
 
 
-def zamienniki_nie_za_ostre() -> list[str]:
-    rows = [line for line in read("references/zamienniki.md").splitlines()
+def word_alternatives_preserve_meaning() -> list[str]:
+    rows = [line for line in read("references/word-alternatives.md").splitlines()
             if line.startswith("| ")]
     errors = []
     for word in ("ten sam", "ważnie", "wziąć udział", "wziąć się za coś"):
         if any(line.startswith(f"| {word} |") for line in rows):
-            errors.append(f"zamienniki.md: „{word}” to nie para zamienna")
+            errors.append(f"word-alternatives.md: „{word}” to nie para zamienna")
     for line in rows:
         if line.startswith("| w zakresie |") and "(usuń)" in line:
-            errors.append("zamienniki.md: „w zakresie” nie zawsze jest puste")
+            errors.append("word-alternatives.md: „w zakresie” nie zawsze jest puste")
     return errors
 
 
 CHECKS = [frontmatter_parses, report_format_in_skill, mode_order,
-          examples_keep_content, implementowac_not_deploy,
-          opis_z_polskimi_znakami, styl_agenta_bez_sprzecznosci,
-          zrodla_w_readme, zamienniki_nie_za_ostre]
+          examples_keep_content, implement_is_distinct_from_deploy,
+          description_has_polish_characters, agent_style_is_consistent,
+          readme_credits_sources, word_alternatives_preserve_meaning]
 
 
 def main() -> int:

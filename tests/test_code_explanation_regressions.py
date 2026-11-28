@@ -4,7 +4,7 @@ import sys
 
 from rules import ROOT
 
-REF = "references/objasnianie-kodu.md"
+REF = "references/code-explanation.md"
 
 
 def read(name: str) -> str:
@@ -38,51 +38,51 @@ def stages(body: str) -> list[str]:
     return [" ".join(item) for item in items]
 
 
-def przyklady_sa_spojne() -> list[str]:
+def examples_are_consistent() -> list[str]:
     """Cel i zastrzeżenie wynikają z opisanych etapów, nie z domysłu."""
     errors = []
-    wzorzec = flat(section(read(REF), "## Przykład wzorcowy"))
+    model_example = flat(section(read(REF), "## Przykład wzorcowy"))
     for phrase in ("raz na dobę", "pusty wiersz"):
-        if phrase in wzorzec:
+        if phrase in model_example:
             errors.append(f"{REF}: przykład wzorcowy ma „{phrase}”, czego etapy nie pokazują")
-    if "codziennie rano" in flat(section(read("references/przyklady.md"), "## Objaśnienie kodu")):
-        errors.append("przyklady.md: „codziennie rano” nie wynika z przeczytanego skryptu")
+    if "codziennie rano" in flat(section(read("references/examples.md"), "## Objaśnienie kodu")):
+        errors.append("examples.md: „codziennie rano” nie wynika z przeczytanego skryptu")
     return errors
 
 
-def kazdy_etap_ma_wyjscie() -> list[str]:
+def each_stage_has_an_output() -> list[str]:
     errors = []
     for name, header in ((REF, "## Przykład wzorcowy"),
-                         ("references/przyklady.md", "## Objaśnienie kodu")):
+                         ("references/examples.md", "## Objaśnienie kodu")):
         for number, stage in enumerate(stages(section(read(name), header)), 1):
             if "Wychodz" not in stage:
                 errors.append(f"{name}: etap {number} bez „Wychodzi”")
     return errors
 
 
-def jedna_funkcja_bez_listy() -> list[str]:
+def single_function_without_stage_list() -> list[str]:
     errors = []
-    malo = flat(section(read(REF), "## Gdy kodu jest mało"))
+    short_explanation = flat(section(read(REF), "## Gdy kodu jest mało"))
     for needle in ("między funkcjami", "jednym zdaniem", "Gdy etapy są co najmniej dwa"):
-        if needle not in malo:
+        if needle not in short_explanation:
             errors.append(f"{REF}, Gdy kodu jest mało: brak „{needle}”")
     if "Jedna funkcja albo jeden krok" not in flat(read("SKILL.md")):
         errors.append("SKILL.md: brak skalowania objaśnienia dla jednej funkcji")
     return errors
 
 
-def jak_to_dziala_po_edycji() -> list[str]:
+def explanation_after_edit() -> list[str]:
     errors = []
-    wybor = section(read("references/tryby.md"), "## Jak wybrać tryb")
-    pierwsze = flat(wybor[wybor.find("1. "):wybor.find("2. ")])
-    if "nawet po edycji" not in pierwsze:
-        errors.append("tryby.md: pytanie 1 nie wyklucza „jak to działa” po edycji")
+    mode_selection = section(read("references/modes.md"), "## Jak wybrać tryb")
+    first_question = flat(mode_selection[mode_selection.find("1. "):mode_selection.find("2. ")])
+    if "nawet po edycji" not in first_question:
+        errors.append("modes.md: pytanie 1 nie wyklucza „jak to działa” po edycji")
     if "przed chwilą zmieniony" not in flat(read("SKILL.md")):
         errors.append("SKILL.md: objaśnienie nie obejmuje kodu przed chwilą zmienionego")
     return errors
 
 
-def identyfikatory_dla_programisty() -> list[str]:
+def identifiers_for_developers() -> list[str]:
     ref = read(REF)
     errors = []
     if "zobacz Odbiorca" not in flat(section(ref, "## Układ")):
@@ -92,30 +92,30 @@ def identyfikatory_dla_programisty() -> list[str]:
     return errors
 
 
-def reguly_twarde_w_nowych_tekstach() -> list[str]:
+def hard_rules_in_new_text() -> list[str]:
     errors = []
     ref = flat(read(REF))
     for old in ("piszesz dopiero po przeczytaniu", "a reguły twarde działają tak samo",
                 "i nawias by mu przeszkadzał", "pustego pliku, import"):
         if old in ref:
             errors.append(f"{REF}: zostało „{old}”")
-    if "obsługi błędu serwera" in flat(read("references/przyklady.md")):
-        errors.append("przyklady.md: łańcuch „obsługi błędu serwera” w wersji dobrej")
+    if "obsługi błędu serwera" in flat(read("references/examples.md")):
+        errors.append("examples.md: łańcuch „obsługi błędu serwera” w wersji dobrej")
     if "ocena poprawności kodu" in read("docs/superpowers/specs/2026-11-16-simple-polish-design.md"):
         errors.append("spec 16.11: łańcuch „ocena poprawności kodu”")
     return errors
 
 
-def pierwszenstwo_nie_usuwa_ostrzezen() -> list[str]:
-    granice = flat(section(read("SKILL.md"), "## Granice"))
-    if "Ostrzeżenie o akcji nieodwracalnej zostaje także wtedy" not in granice:
+def instruction_precedence_preserves_warnings() -> list[str]:
+    boundaries = flat(section(read("SKILL.md"), "## Granice"))
+    if "Ostrzeżenie o akcji nieodwracalnej zostaje także wtedy" not in boundaries:
         return ["SKILL.md: pierwszeństwo instrukcji nie chroni ostrzeżeń"]
     return []
 
 
-CHECKS = [przyklady_sa_spojne, kazdy_etap_ma_wyjscie, jedna_funkcja_bez_listy,
-          jak_to_dziala_po_edycji, identyfikatory_dla_programisty,
-          reguly_twarde_w_nowych_tekstach, pierwszenstwo_nie_usuwa_ostrzezen]
+CHECKS = [examples_are_consistent, each_stage_has_an_output, single_function_without_stage_list,
+          explanation_after_edit, identifiers_for_developers,
+          hard_rules_in_new_text, instruction_precedence_preserves_warnings]
 
 
 def main() -> int:

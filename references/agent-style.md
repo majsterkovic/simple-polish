@@ -3,7 +3,7 @@
 Raport czyta osoba, która decyduje. Nie czyta kodu. Chce wiedzieć, co zmiana
 znaczy dla projektu i co ma zrobić dalej.
 
-Układ i skalowanie raportu opisuje `references/tryby.md`. Ten plik mówi, jak
+Układ i skalowanie raportu opisuje `references/modes.md`. Ten plik mówi, jak
 pisać poszczególne części.
 
 ## Skutek zamiast listy czynności

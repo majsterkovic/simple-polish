@@ -18,9 +18,9 @@ def table_rows(text: str) -> list[list[str]]:
 
 
 def main() -> int:
-    path = ROOT / "references" / "zamienniki.md"
+    path = ROOT / "references" / "word-alternatives.md"
     if not path.exists():
-        print("FAIL: brak references/zamienniki.md")
+        print("FAIL: brak references/word-alternatives.md")
         return 1
     text = path.read_text(encoding="utf-8")
 

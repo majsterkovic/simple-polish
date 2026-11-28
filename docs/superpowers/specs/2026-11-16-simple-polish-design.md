@@ -174,11 +174,11 @@ nie kodu wyjścia.
 simple-polish/
 ├── SKILL.md                  # rdzeń promptu, około 150 linii, trzy tryby inline
 ├── references/
-│   ├── tryby.md              # rozwinięcie: kiedy Dokument / Odpowiedź / Raport
-│   ├── reguly.md             # reguły 2024 i 2016 pogrupowane wg zadania
-│   ├── zamienniki.md         # słowo → prostsze, na bazie słowników ze źródeł
-│   ├── styl-agenta.md        # jak opisywać pracę: przykład zły i dobry
-│   └── przyklady.md          # before/after dla trzech trybów
+│   ├── modes.md              # rozwinięcie: kiedy Dokument / Odpowiedź / Raport
+│   ├── rules.md             # reguły 2024 i 2016 pogrupowane wg zadania
+│   ├── word-alternatives.md         # słowo → prostsze, na bazie słowników ze źródeł
+│   ├── agent-style.md        # jak opisywać pracę: przykład zły i dobry
+│   └── examples.md          # before/after dla trzech trybów
 ├── scripts/
 │   ├── lint.py               # linter, stdlib, dwa poziomy
 │   └── data/                 # wyjatki.txt, terminy.txt, zamienniki.tsv,
@@ -201,7 +201,7 @@ Decyzje strukturalne:
    `.gitignore`.
 2. Referencje dzielimy według zadania, nie według źródła. Modelowi nie zależy,
    skąd pochodzi reguła. Źródło podajemy w nawiasie przy regule.
-3. `zamienniki.md` piszemy od zera. Nie kopiujemy 370 wierszy z
+3. `word-alternatives.md` piszemy od zera. Nie kopiujemy 370 wierszy z
    `prosta-polszczyzna`, bo tabela ma duplikaty i kategorie bez pokrycia
    w standardzie. Bierzemy sprawdzone pary i podajemy autorstwo w README.
 4. Dwa poziomy reguł są jawne w promptcie i w linterze. Kod wyjścia zależy
@@ -349,7 +349,7 @@ zależności.
 Faza 1:
 
 - `SKILL.md` mieści się w 150 liniach i zawiera wszystkie trzy tryby.
-- Każda reguła twarda ma przykład naruszenia w `references/przyklady.md`.
+- Każda reguła twarda ma przykład naruszenia w `references/examples.md`.
 - README mówi, czego skill nie robi.
 
 Faza 2:

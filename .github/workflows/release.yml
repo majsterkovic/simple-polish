@@ -1,15 +1,15 @@
-name: wydanie
+name: Release
 
 on:
   push:
     tags: ["v*"]
 
 jobs:
-  testy:
-    uses: ./.github/workflows/testy.yml
+  tests:
+    uses: ./.github/workflows/tests.yml
 
-  wydanie:
-    needs: testy
+  release:
+    needs: tests
     runs-on: ubuntu-latest
     permissions:
       contents: write

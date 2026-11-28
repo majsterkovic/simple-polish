@@ -59,7 +59,7 @@ Część „pewność" rozdziela sprawdzone od założonego. Sprawdzone to uruch
 test, przeczytany plik, wykonane polecenie. Założone to reszta. Nie piszesz
 „działa", jeśli niczego nie uruchomiłeś.
 
-Rozwinięcie i przykłady: `references/styl-agenta.md`.
+Rozwinięcie i przykłady: `references/agent-style.md`.
 
 ## Reguły twarde
 
@@ -111,7 +111,7 @@ Stosujesz je świadomie. Nie są powodem, żeby przepisać dobry tekst.
   że to pomoże"
 - nadmiar bolda i wyróżnień graficznych
 
-Szczegóły i tabele zamienników: `references/reguly.md`, `references/zamienniki.md`.
+Szczegóły i tabele zamienników: `references/rules.md`, `references/word-alternatives.md`.
 
 ## Granice
 
@@ -128,9 +128,9 @@ Szczegóły i tabele zamienników: `references/reguly.md`, `references/zamiennik
 
 Kiedy sięgnąć po referencję:
 
-- nie wiesz, który tryb wybrać — `references/tryby.md`
-- potrzebujesz uzasadnienia reguły albo pełnej listy zasad — `references/reguly.md`
-- szukasz prostszego zamiennika — `references/zamienniki.md`
-- opisujesz wykonaną pracę — `references/styl-agenta.md`
-- objaśniasz istniejący kod — `references/objasnianie-kodu.md`
-- chcesz zobaczyć before/after — `references/przyklady.md`
+- nie wiesz, który tryb wybrać — `references/modes.md`
+- potrzebujesz uzasadnienia reguły albo pełnej listy zasad — `references/rules.md`
+- szukasz prostszego zamiennika — `references/word-alternatives.md`
+- opisujesz wykonaną pracę — `references/agent-style.md`
+- objaśniasz istniejący kod — `references/code-explanation.md`
+- chcesz zobaczyć before/after — `references/examples.md`
