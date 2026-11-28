@@ -12,7 +12,20 @@ NEEDLES = [
     "AminBlg",
     "danyuchn",
     "Jasnopis",
+    "objaśni",
+    "czternastu scenariuszach",
 ]
+PREFIX = "tekst, który zostaje:"
+
+
+def dokument_items(text: str) -> list[str]:
+    """Rodzaje tekstu z kolumny „Kiedy” w wierszu | **Dokument** |."""
+    for line in text.splitlines():
+        if line.startswith("| **Dokument** |"):
+            kiedy = line.split("|")[2].strip()
+            kiedy = kiedy.removeprefix(PREFIX).strip()
+            return [item.strip() for item in kiedy.split(", ") if item.strip()]
+    return []
 
 
 def main() -> int:
@@ -23,6 +36,14 @@ def main() -> int:
     text = path.read_text(encoding="utf-8")
 
     errors = [f"brak: {needle}" for needle in NEEDLES if needle not in text]
+
+    skill = dokument_items((ROOT / "SKILL.md").read_text(encoding="utf-8"))
+    if not skill:
+        errors.append("SKILL.md: brak wiersza Dokument w tabeli trybów")
+    readme = dokument_items(text)
+    errors += [f"README, wiersz Dokument: brak „{item}”"
+               for item in skill if item not in readme]
+
     for error in errors:
         print("FAIL:", error)
     return 1 if errors else 0

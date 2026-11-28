@@ -12,6 +12,7 @@ NEEDLES = [
     "Co masz zrobić",
     "Pewność",
     "nie zmienia faktów",
+    "kolejność ma znaczenie",
 ]
 
 

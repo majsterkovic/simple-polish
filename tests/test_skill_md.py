@@ -43,6 +43,10 @@ def main() -> int:
         if len(line) > 200:
             errors.append(f"linia dluzej niz 200 znakow: {line[:40]}")
 
+    for needle in ("kolejność ma znaczenie", "mają pierwszeństwo przed skillem"):
+        if needle not in text:
+            errors.append(f"brak zdania: {needle}")
+
     for error in errors:
         print("FAIL:", error)
     return 1 if errors else 0

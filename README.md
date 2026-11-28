@@ -28,12 +28,13 @@ wprost, na przykład: „opisz mi prostym językiem, co zrobiłeś".
 
 | Tryb | Kiedy | Co rządzi tekstem |
 |---|---|---|
-| **Dokument** | tekst, który zostaje: README, mail, commit, opis PR, komunikat błędu | standard 2024 i twarde limity |
+| **Dokument** | tekst, który zostaje: README, mail, release notes, UI, commit, opis PR, komunikat błędu | standard 2024 i twarde limity |
 | **Odpowiedź** | rozmowa: pytanie, wyjaśnienie, dyskusja | odpowiedź w pierwszym zdaniu, proza, terminy wyjaśniane |
 | **Raport z pracy** | agent wykonał akcje i zdaje z nich sprawę | skutek, co się zmieniło, co to znaczy, decyzja, pewność |
 
 W razie wątpliwości agent wybiera Odpowiedź. Raport skaluje się do wagi pracy:
-drobna zmiana dostaje trzy części, większa pięć.
+drobna zmiana dostaje trzy części, większa pięć. Pytanie o to, jak działa
+istniejący kod, dostaje objaśnienie: cel, etapy, co może zaskoczyć i pewność.
 
 ## Przykład
 
@@ -95,7 +96,7 @@ reguły, ale nic ich nie sprawdza automatycznie.
 W planach:
 
 - faza 2: linter, który znajduje naruszenia reguł twardych w pliku,
-- faza 3: hooki w Claude Code i ewaluacja na dwunastu scenariuszach.
+- faza 3: hooki w Claude Code i ewaluacja na czternastu scenariuszach.
 
 ## Testy
 

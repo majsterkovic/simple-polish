@@ -25,6 +25,10 @@ Trzy reguły trzymają całość:
 3. **Tryb nie zmienia faktów.** Żadna reguła nie pozwala pominąć ostrzeżenia
    o akcji nieodwracalnej ani dopisać twierdzenia, którego agent nie sprawdził.
 
+Pytanie o to, jak działa kod, także ten przed chwilą zmieniony, to wariant
+Odpowiedzi: objaśnienie kodu. Układ: cel, etapy, co może zaskoczyć, pewność.
+Jedna funkcja albo jeden krok: dwa, trzy zdania prozy.
+
 ## Raport z pracy
 
 Układ: skutek → co się zmieniło → co to znaczy dla projektu → decyzja
@@ -83,6 +87,8 @@ Limity mają kierunek i tolerancję, nie zerojedynkowy próg.
   zdanie z dwiema myślami. Powyżej 25 tniemy zawsze.
 - W trybie odpowiedzi limit jest luźniejszy: 30 słów. Odpowiedź musi czasem
   zmieścić warunek i skutek w jednym zdaniu.
+- W trybie odpowiedzi lista wygrywa z prozą, gdy kolejność ma znaczenie albo
+  gdy elementów jest co najmniej cztery (`wyliczenie-lista`).
 - Akapit ma 3 do 5 zdań. Sześć i więcej to sygnał, nie błąd.
 - Strona bierna jest dozwolona, gdy wykonawca jest nieznany albo nieistotny.
 - Imiesłowy `-ąc` i rzeczowniki odczasownikowe są dozwolone, gdy są terminem:
@@ -116,6 +122,9 @@ Szczegóły i tabele zamienników: `references/reguly.md`, `references/zamiennik
 - Jeśli tekst już spełnia reguły, powiedz to jednym zdaniem i nic nie
   przepisuj.
 - Nie komentujesz przepisania, chyba że tryb tego wymaga.
+- Instrukcje użytkownika i harnessu mają pierwszeństwo przed skillem, na
+  przykład narzucony format odpowiedzi. Ostrzeżenie o akcji nieodwracalnej
+  zostaje także wtedy.
 
 Kiedy sięgnąć po referencję:
 
@@ -123,4 +132,5 @@ Kiedy sięgnąć po referencję:
 - potrzebujesz uzasadnienia reguły albo pełnej listy zasad — `references/reguly.md`
 - szukasz prostszego zamiennika — `references/zamienniki.md`
 - opisujesz wykonaną pracę — `references/styl-agenta.md`
+- objaśniasz istniejący kod — `references/objasnianie-kodu.md`
 - chcesz zobaczyć before/after — `references/przyklady.md`
