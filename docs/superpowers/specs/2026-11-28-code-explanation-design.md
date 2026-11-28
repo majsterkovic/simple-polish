@@ -48,9 +48,9 @@ samej zmianie, bo każdy to jedno zdanie albo jedna poprawka.
 
 | Podejście | Zysk | Koszt | Decyzja |
 |---|---|---|---|
-| Wariant Odpowiedzi z plikiem `references/objasnianie-kodu.md` | pierwsze zdanie działa jak w Odpowiedzi, SKILL.md rośnie o kilka linii | wariant łatwo przeoczyć | wybrane |
-| Czwarty tryb „Objaśnienie” | widoczny w tabeli trybów | trudniejszy wybór trybu, przebudowa `tryby.md` | odrzucone |
-| Rozszerzenie `styl-agenta.md` | brak nowego pliku | ten plik dotyczy wykonanej pracy, a objaśnienie nie jest pracą | odrzucone |
+| Wariant Odpowiedzi z plikiem `references/code-explanation.md` | pierwsze zdanie działa jak w Odpowiedzi, SKILL.md rośnie o kilka linii | wariant łatwo przeoczyć | wybrane |
+| Czwarty tryb „Objaśnienie” | widoczny w tabeli trybów | trudniejszy wybór trybu, przebudowa `modes.md` | odrzucone |
+| Rozszerzenie `agent-style.md` | brak nowego pliku | ten plik dotyczy wykonanej pracy, a objaśnienie nie jest pracą | odrzucone |
 
 Wybór podjął agent, a użytkownik zatwierdził zakres w rozmowie.
 
@@ -88,18 +88,18 @@ użytkownik sam używa nazw z kodu, identyfikatory mogą pojawić się od począ
 
 Pliki:
 
-- `references/objasnianie-kodu.md`: zasady, przykład wzorcowy, kontrprzykład
+- `references/code-explanation.md`: zasady, przykład wzorcowy, kontrprzykład
   opisujący strukturę plików zamiast przepływu danych.
 - `SKILL.md`: jedna linia w tabeli „Kiedy sięgnąć po referencję” i jedno
   zdanie w opisie trybu Odpowiedź.
-- `references/tryby.md`: jedno zdanie przy trybie Odpowiedź z odsyłaczem.
-- `references/przyklady.md`: sekcja `## Objaśnienie kodu`, para przed i po.
+- `references/modes.md`: jedno zdanie przy trybie Odpowiedź z odsyłaczem.
+- `references/examples.md`: sekcja `## Objaśnienie kodu`, para przed i po.
 
 ### Lista a proza
 
 W trybie Odpowiedź lista wygrywa z prozą, gdy kolejność ma znaczenie albo gdy
 elementów jest co najmniej cztery (`wyliczenie-lista`). Zdanie trafia do
-SKILL.md i do `tryby.md`.
+SKILL.md i do `modes.md`.
 
 ### Pierwszeństwo instrukcji
 
@@ -127,9 +127,9 @@ bo to wynik uruchomienia użytkownika.
 
 ### Testy
 
-- `tests/test_objasnianie.py`: plik istnieje, ma etykiety `Co może zaskoczyć:`
+- `tests/test_code_explanation.py`: plik istnieje, ma etykiety `Co może zaskoczyć:`
   i `Pewność:`, trzy rodzaje zdań o pewności i wyjście „nic nietypowego”.
-  SKILL.md i `tryby.md` odsyłają do pliku. `przyklady.md` ma sekcję
+  SKILL.md i `modes.md` odsyłają do pliku. `examples.md` ma sekcję
   `## Objaśnienie kodu`.
 - `tests/test_readme.py`: każdy rodzaj tekstu z wiersza „Dokument” w SKILL.md
   występuje w wierszu „Dokument” w README.

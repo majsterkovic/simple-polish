@@ -20,9 +20,9 @@ def section(text: str, header: str) -> str:
 
 
 def main() -> int:
-    path = ROOT / "references" / "przyklady.md"
+    path = ROOT / "references" / "examples.md"
     if not path.exists():
-        print("FAIL: brak references/przyklady.md")
+        print("FAIL: brak references/examples.md")
         return 1
     text = path.read_text(encoding="utf-8")
     errors = []

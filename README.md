@@ -52,7 +52,7 @@ Raport z pracy po zmianie w kilku plikach:
 >
 > Pewność: testy przechodzą, ale nie sprawdzałem tego na prawdziwym ruchu.
 
-Więcej przykładów: `references/przyklady.md`.
+Więcej przykładów: `references/examples.md`.
 
 ## Czego nie robi
 
@@ -76,7 +76,7 @@ Więcej przykładów: `references/przyklady.md`.
   Pracowni Prostej Polszczyzny Uniwersytetu Wrocławskiego (2016).
   Uzupełnienie zasad 2024.
 - [prosta-polszczyzna](https://github.com/kashiash/prosta-polszczyzna),
-  autor: kashiash (MIT). Źródło par w `references/zamienniki.md` oraz zasad
+  autor: kashiash (MIT). Źródło par w `references/word-alternatives.md` oraz zasad
   BLUF, Top-Down Bridge i Just-in-Time Context w raporcie z pracy.
 - [SimpleEnglish](https://github.com/AminBlg/SimpleEnglish), autor: AminBlg
   (MIT). Podział na rejestry, dyscyplina wyjścia, proza bez bolda

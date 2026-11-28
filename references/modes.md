@@ -16,7 +16,7 @@ W każdym innym przypadku, także w razie wątpliwości, pisz w trybie
 **Odpowiedź**: pytanie, wyjaśnienie, dyskusja, „dlaczego tak".
 
 Pytanie o to, jak działa kod, to wariant Odpowiedzi: objaśnienie kodu. Układ
-i zasady: `references/objasnianie-kodu.md`.
+i zasady: `references/code-explanation.md`.
 
 W trybie odpowiedzi lista wygrywa z prozą, gdy kolejność ma znaczenie albo gdy
 elementów jest co najmniej cztery (`wyliczenie-lista`).

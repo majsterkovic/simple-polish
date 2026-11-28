@@ -23,7 +23,7 @@
 ## Review Focus
 
 Pięć przypadków, które najłatwiej zepsuć w prompcie. Każdy dostaje przykład
-w `references/przyklady.md` i asercję w teście z Zadania 6.
+w `references/examples.md` i asercję w teście z Zadania 6.
 
 1. Termin fachowy, który jest zarazem najprostszym słowem (*konfiguracja*,
    *wymaganie*, *jakość*). Skill nie może go tępić.
@@ -170,26 +170,26 @@ git commit -m "feat: rdzen skilla simple-polish z trzema trybami"
 
 ---
 
-### Task 2: `references/tryby.md`
+### Task 2: `references/modes.md`
 
 **Files:**
-- Create: `references/tryby.md`
-- Create: `tests/test_tryby.py`
+- Create: `references/modes.md`
+- Create: `tests/test_modes.py`
 
 **Interfaces:**
 - Consumes: nazwy trybów z `SKILL.md`.
 - Produces: etykiety pięciu części raportu, powtarzane w Zadanich 5 i 6: `Co się zmieniło`, `Co to znaczy dla projektu`, `Co masz zrobić`, `Pewność`.
 
-- [ ] **Step 1: Napisz test `tests/test_tryby.py`**
+- [ ] **Step 1: Napisz test `tests/test_modes.py`**
 
-Sprawdza, że `references/tryby.md` istnieje i zawiera: `Dokument`, `Odpowiedź`, `Raport z pracy`, `W razie wątpliwości`, `Co się zmieniło`, `Co to znaczy dla projektu`, `Co masz zrobić`, `Pewność`, `nie zmienia faktów`.
+Sprawdza, że `references/modes.md` istnieje i zawiera: `Dokument`, `Odpowiedź`, `Raport z pracy`, `W razie wątpliwości`, `Co się zmieniło`, `Co to znaczy dla projektu`, `Co masz zrobić`, `Pewność`, `nie zmienia faktów`.
 
 - [ ] **Step 2: Uruchom test, sprawdź że pada**
 
 Run: `python tests/run.py`
-Expected: `FAIL: brak references/tryby.md`.
+Expected: `FAIL: brak references/modes.md`.
 
-- [ ] **Step 3: Napisz `references/tryby.md`**
+- [ ] **Step 3: Napisz `references/modes.md`**
 
 Zawartość, w tej kolejności:
 
@@ -208,31 +208,31 @@ Expected: kod wyjścia 0.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add references/tryby.md tests/test_tryby.py
+git add references/modes.md tests/test_modes.py
 git commit -m "docs: referencja trybow pracy"
 ```
 
 ---
 
-### Task 3: `references/reguly.md`
+### Task 3: `references/rules.md`
 
 **Files:**
-- Create: `references/reguly.md`
-- Create: `tests/test_reguly.py`
+- Create: `references/rules.md`
+- Create: `tests/test_rules.py`
 
 **Interfaces:**
 - Consumes: dziesięć identyfikatorów reguł z Zadania 1.
 
-- [ ] **Step 1: Napisz test `tests/test_reguly.py`**
+- [ ] **Step 1: Napisz test `tests/test_rules.py`**
 
 Sprawdza obecność wszystkich dziesięciu identyfikatorów, ciągów `2024` i `2016`, oraz sześciu nagłówków standardu 2024: `Określ odbiorcę`, `Układ i kompozycja`, `Słownictwo`, `Składnia`, `Sprawdź tekst`, `Zdrowy rozsądek`.
 
 - [ ] **Step 2: Uruchom test, sprawdź że pada**
 
 Run: `python tests/run.py`
-Expected: `FAIL: brak references/reguly.md`.
+Expected: `FAIL: brak references/rules.md`.
 
-- [ ] **Step 3: Napisz `references/reguly.md`**
+- [ ] **Step 3: Napisz `references/rules.md`**
 
 Struktura: dwie części.
 
@@ -250,19 +250,19 @@ Expected: kod wyjścia 0.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add references/reguly.md tests/test_reguly.py
+git add references/rules.md tests/test_rules.py
 git commit -m "docs: reguly 2024 i 2016 pogrupowane wedlug zadania"
 ```
 
 ---
 
-### Task 4: `references/zamienniki.md`
+### Task 4: `references/word-alternatives.md`
 
 **Files:**
-- Create: `references/zamienniki.md`
-- Create: `tests/test_zamienniki.py`
+- Create: `references/word-alternatives.md`
+- Create: `tests/test_word_alternatives.py`
 
-- [ ] **Step 1: Napisz test `tests/test_zamienniki.py`**
+- [ ] **Step 1: Napisz test `tests/test_word_alternatives.py`**
 
 Trzy asercje:
 
@@ -277,9 +277,9 @@ assert text.count("\n## ") >= 10
 - [ ] **Step 2: Uruchom test, sprawdź że pada**
 
 Run: `python tests/run.py`
-Expected: `FAIL: brak references/zamienniki.md`.
+Expected: `FAIL: brak references/word-alternatives.md`.
 
-- [ ] **Step 3: Napisz `references/zamienniki.md`**
+- [ ] **Step 3: Napisz `references/word-alternatives.md`**
 
 Dziesięć sekcji `## `: modne wyrazy, kancelaryzmy, archaizmy, konstrukcje analityczne, pleonazmy, kalki z angielskiego, formy bezosobowe, puste formuły, rusycyzmy, terminy IT po polsku.
 
@@ -297,31 +297,31 @@ Expected: kod wyjścia 0.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add references/zamienniki.md tests/test_zamienniki.py
+git add references/word-alternatives.md tests/test_word_alternatives.py
 git commit -m "docs: tabela zamiennikow bez duplikatow"
 ```
 
 ---
 
-### Task 5: `references/styl-agenta.md`
+### Task 5: `references/agent-style.md`
 
 **Files:**
-- Create: `references/styl-agenta.md`
-- Create: `tests/test_styl_agenta.py`
+- Create: `references/agent-style.md`
+- Create: `tests/test_agent_style.py`
 
 **Interfaces:**
 - Consumes: etykiety raportu z Zadania 2.
 
-- [ ] **Step 1: Napisz test `tests/test_styl_agenta.py`**
+- [ ] **Step 1: Napisz test `tests/test_agent_style.py`**
 
 Sprawdza obecność pięciu etykiet, słów `sprawdzone` i `założone`, oraz co najmniej trzech wystąpień `Źle:` i trzech `Dobrze:`.
 
 - [ ] **Step 2: Uruchom test, sprawdź że pada**
 
 Run: `python tests/run.py`
-Expected: `FAIL: brak references/styl-agenta.md`.
+Expected: `FAIL: brak references/agent-style.md`.
 
-- [ ] **Step 3: Napisz `references/styl-agenta.md`**
+- [ ] **Step 3: Napisz `references/agent-style.md`**
 
 Części:
 
@@ -340,22 +340,22 @@ Expected: kod wyjścia 0.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add references/styl-agenta.md tests/test_styl_agenta.py
+git add references/agent-style.md tests/test_agent_style.py
 git commit -m "docs: jak opisywac wykonana prace"
 ```
 
 ---
 
-### Task 6: `references/przyklady.md`
+### Task 6: `references/examples.md`
 
 **Files:**
-- Create: `references/przyklady.md`
-- Create: `tests/test_przyklady.py`
+- Create: `references/examples.md`
+- Create: `tests/test_examples.py`
 
 **Interfaces:**
 - Consumes: identyfikatory reguł z Zadania 1, etykiety z Zadania 2.
 
-- [ ] **Step 1: Napisz test `tests/test_przyklady.py`**
+- [ ] **Step 1: Napisz test `tests/test_examples.py`**
 
 Dwie asercje:
 
@@ -372,9 +372,9 @@ for case in ["konfiguracja", "createUser", "nieodwracaln", "zastrzeżenie",
 - [ ] **Step 2: Uruchom test, sprawdź że pada**
 
 Run: `python tests/run.py`
-Expected: `FAIL: brak references/przyklady.md`.
+Expected: `FAIL: brak references/examples.md`.
 
-- [ ] **Step 3: Napisz `references/przyklady.md`**
+- [ ] **Step 3: Napisz `references/examples.md`**
 
 Struktura: sześć sekcji.
 
@@ -393,7 +393,7 @@ Expected: kod wyjścia 0.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add references/przyklady.md tests/test_przyklady.py
+git add references/examples.md tests/test_examples.py
 git commit -m "docs: przyklady before/after dla trzech trybow"
 ```
 
@@ -452,7 +452,7 @@ git commit -m "docs: README z instalacja, ograniczeniami i zrodlami"
 
 - [ ] **Step 1: Napisz test `tests/test_consistency.py`**
 
-Importuje `RULES` z `tests/rules.py`. Pierwsza asercja: każdy identyfikator z listy występuje w `SKILL.md`, w `references/reguly.md` i w `references/przyklady.md`. Druga asercja: `name:` we frontmatterze pasuje do `^[a-z0-9-]{1,64}$`, a `description:` ma najwyżej 1024 znaki.
+Importuje `RULES` z `tests/rules.py`. Pierwsza asercja: każdy identyfikator z listy występuje w `SKILL.md`, w `references/rules.md` i w `references/examples.md`. Druga asercja: `name:` we frontmatterze pasuje do `^[a-z0-9-]{1,64}$`, a `description:` ma najwyżej 1024 znaki.
 
 - [ ] **Step 2: Uruchom test**
 
@@ -462,7 +462,7 @@ Expected: kod wyjścia 0. Jeśli nie, brakujący identyfikator wskazuje plik do 
 - [ ] **Step 3: Sprawdź, że skill jest kompletny bez lintera**
 
 Run: `python tests/run.py && ls references/`
-Expected: kod 0 i pięć plików: `przyklady.md`, `reguly.md`, `styl-agenta.md`, `tryby.md`, `zamienniki.md`.
+Expected: kod 0 i pięć plików: `examples.md`, `rules.md`, `agent-style.md`, `modes.md`, `word-alternatives.md`.
 
 - [ ] **Step 4: Sprawdź ręcznie jeden przypadek**
 

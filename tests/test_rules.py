@@ -13,9 +13,9 @@ HEADERS = [
 
 
 def main() -> int:
-    path = ROOT / "references" / "reguly.md"
+    path = ROOT / "references" / "rules.md"
     if not path.exists():
-        print("FAIL: brak references/reguly.md")
+        print("FAIL: brak references/rules.md")
         return 1
     text = path.read_text(encoding="utf-8")
 
